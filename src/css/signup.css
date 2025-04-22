@@ -1,0 +1,270 @@
+/* Navbar Styling */
+.navbar {
+  background-color: #fdfaf5;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.navbar-brand {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  color: #1a1a1a;
+  text-decoration: none;
+}
+
+.nav-link {
+  font-size: 16px;
+  color: #1a1a1a;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #9f7aea;
+}
+
+.nav-link.active {
+  font-weight: bold;
+  color: #9f7aea;
+}
+
+/* Signup Page Styling */
+.signup-page {
+  background-color: #f9f1f3; /* Light pink background */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  align-items: center;
+}
+
+.signup-container {
+  background-color: #f5e6e8;
+  width: 100%;
+  max-width: 1272px;
+  display: flex;
+  justify-content: center;
+}
+
+.signup-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+  width: 480px;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+.signup-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.signup-header h1 {
+  color: #1a1a1a;
+  font-family: "Roboto-Bold", Helvetica;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 48px;
+  margin: 0;
+}
+
+.signup-header p {
+  color: rgba(26, 26, 26, 0.6);
+  font-family: "Roboto-Regular", Helvetica;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  margin: 8px 0 0;
+}
+
+.error-message {
+  color: #ff0000;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-group label {
+  color: #1a1a1a;
+  font-family: "Roboto-Medium", Helvetica;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 21px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.form-group input {
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  height: 56px;
+  width: 100%;
+  padding: 0 16px;
+  box-sizing: border-box;
+  font-family: "Roboto-Regular", Helvetica;
+  font-size: 16px;
+  color: #999999;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #1a1a1a;
+}
+
+button[type="submit"] {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  font-family: "Roboto-Medium", Helvetica;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  border: none;
+  border-radius: 4px;
+  height: 56px;
+  width: 100%;
+  cursor: pointer;
+  margin-top: 16px;
+}
+
+button[type="submit"]:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.signup-footer {
+  margin-top: 24px;
+  text-align: center;
+}
+
+.signup-footer button {
+  background: none;
+  border: none;
+  color: #1a1a1a;
+  font-family: "Roboto-Regular", Helvetica;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  cursor: pointer;
+  padding: 0;
+  margin: 0 4px;
+}
+
+.signup-footer button:hover {
+  text-decoration: underline;
+}
+
+.signup-footer p {
+  color: rgba(26, 26, 26, 0.6);
+  font-family: "Roboto-Regular", Helvetica;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  margin-top: 16px;
+}
+
+.card {
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card h1, .card h2 {
+  color: #333;
+}
+
+.card p {
+  color: #666;
+}
+
+.card .btn-primary {
+  background-color: #9f7aea;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.card .btn-primary:hover {
+  background-color: #8b6bd1;
+}
+
+.alert {
+  font-size: 14px;
+}
+
+/* Form Styling */
+.form-label {
+  font-weight: bold;
+  color: #444;
+}
+
+.form-control {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #9f7aea;
+  box-shadow: 0 0 5px rgba(159, 122, 234, 0.5);
+  outline: none;
+}
+
+.d-grid button {
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* Footer Link */
+.text-decoration-none {
+  color: #9f7aea;
+  transition: color 0.3s ease;
+}
+
+.text-decoration-none:hover {
+  color: #8b6bd1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar-brand {
+    font-size: 20px;
+  }
+
+  .nav-link {
+    font-size: 14px;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  .form-control {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-brand {
+    font-size: 18px;
+  }
+
+  .nav-link {
+    font-size: 12px;
+  }
+
+  .card h1, .card h2 {
+    font-size: 18px;
+  }
+
+  .form-control {
+    font-size: 12px;
+  }
+}

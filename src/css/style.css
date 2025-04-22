@@ -1,0 +1,395 @@
+/* Navbar Styles */
+.simple-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-brand a {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  position: relative;
+}
+
+.nav-link.active {
+  color: #000;
+  font-weight: 600;
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #333;
+}
+
+.nav-link:hover {
+  color: #666;
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.login-button {
+  padding: 0.5rem 1rem;
+  color: #1a1a1a;
+  border: 1px solid #1a1a1a;
+  background-color: transparent;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.signup-button {
+  padding: 0.5rem 1rem;
+  background-color: #333;
+  color: white !important;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.signup-button:hover {
+  background-color: #555;
+}
+
+/* Page Structure */
+.homepage {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.homepage-content {
+  flex: 1;
+}
+
+/* Hero Section */
+.hero {
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #f9f9f9;
+  padding: 40px;
+  margin-bottom: 60px;
+}
+
+.hero-subtitle {
+  color: #8e1e1e;
+  font-size: 24px;
+  margin-bottom: 40px;
+  max-width: 700px;
+  line-height: 1.5;
+}
+
+.cta-button {
+  background-color: #6c1874c7;
+  border-radius: 6px;
+  padding: 18px 36px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  box-shadow: 0 4px 6px rgba(117, 12, 138, 0.733);
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.cta-text {
+  color: #1a1a1a;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+/* Image Placeholders */
+.image-placeholder {
+  background-color: #f0f0f0;
+  border: 2px dashed #9f7aea;
+  color: #9f7aea;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 8px;
+  margin: 10px 0;
+  padding: 20px;
+}
+
+/* Section Titles */
+.section-title {
+  text-align: center;
+  font-size: 42px;
+  font-weight: 700;
+  margin: 60px 0;
+  color: #1a1a1a;
+}
+
+/* Perfume Categories */
+.perfume-categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 80px;
+  padding: 0 40px;
+}
+
+.perfume-category {
+  flex: 1;
+  min-width: 250px;
+  max-width: 300px;
+  text-align: center;
+}
+
+.perfume-type {
+  font-size: 20px;
+  font-weight: 500;
+  color: #1a1a1a;
+  line-height: 1.4;
+  margin-top: 20px;
+}
+
+/* Newsletter */
+.newsletter {
+  background-color: #1a1a1a;
+  padding: 100px 40px;
+  text-align: center;
+  color: white;
+  margin-bottom: 80px;
+}
+
+.newsletter-title {
+  font-size: 42px;
+  margin-bottom: 24px;
+  font-weight: 700;
+}
+
+.newsletter-subtitle {
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 50px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.newsletter-form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.newsletter-input {
+  padding: 12px 20px;
+  border-radius: 4px;
+  border: none;
+  flex: 1;
+  font-size: 16px;
+}
+
+.newsletter-button {
+  padding: 12px 24px;
+  background-color: #9f7aea;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.newsletter-button:hover {
+  background-color: #8b6bd1;
+}
+
+/* Footer */
+.footer {
+  background-color: #f5e6e8;
+  padding: 60px 40px;
+}
+
+.footer-section {
+  margin-bottom: 20px;
+}
+
+.footer-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: #1a1a1a;
+}
+
+.footer-description {
+  color: rgba(26, 26, 26, 0.6);
+  line-height: 1.6;
+  font-size: 16px;
+  max-width: 300px;
+}
+
+.footer-link {
+  color: rgba(26, 26, 26, 0.6);
+  margin-bottom: 12px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+}
+
+.footer-link:hover {
+  color: #1a1a1a;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .simple-navbar {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .navbar-collapse {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links {
+    margin: 1rem 0;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .auth-buttons {
+    margin-top: 1rem;
+    justify-content: center;
+  }
+
+  .hero {
+    height: auto;
+    padding: 60px 20px;
+  }
+
+  .perfume-categories {
+    grid-template-columns: 1fr;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+  }
+  
+  .footer {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Bootstrap Overrides */
+.navbar-toggler {
+  border: none;
+  padding: 0.25rem;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.container, .container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Add these to your existing CSS file */
+
+/* Navbar scroll effect */
+.simple-navbar.scrolled {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* Product category hover */
+.perfume-category {
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+/* CTA button animation */
+.cta-button {
+    transition: transform 0.3s ease;
+}
+
+/* Active nav link */
+.nav-link.active {
+    position: relative;
+    font-weight: 600;
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 2px;
+    background-color: currentColor;
+    transition: all 0.3s ease;
+}
+
+/* Mobile menu adjustments */
+@media (max-width: 992px) {
+    .navbar-collapse {
+        background-color: white;
+        padding: 1rem;
+        margin-top: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .auth-buttons {
+        margin-top: 1rem;
+        justify-content: center;
+    }
+}

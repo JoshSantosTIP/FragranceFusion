@@ -1,0 +1,157 @@
+/* FAQ Page Container */
+.faq-page {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f9f1f3; /* Light pink background */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navbar Styling */
+.navbar {
+    background-color: #fdfaf5;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.navbar-brand {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: #1a1a1a;
+    text-decoration: none;
+}
+
+.nav-link {
+    font-size: 16px;
+    color: #1a1a1a;
+    text-decoration: none;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #9f7aea;
+}
+
+.nav-link.active {
+    font-weight: bold;
+    color: #9f7aea;
+}
+
+/* FAQ Content */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.text-center h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+}
+
+.text-center p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+/* Accordion Styling */
+.accordion-item {
+    background-color: #ffffff;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.accordion-item:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+}
+
+.accordion-header {
+    font-size: 16px;
+    font-weight: 500;
+    color: #1a1a1a;
+}
+
+.accordion-button {
+    background-color: #fdfaf5;
+    color: #1a1a1a;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 16px;
+    border: none;
+    outline: none;
+    transition: background-color 0.3s ease;
+}
+
+.accordion-button:hover {
+    background-color: #f5f5f5;
+}
+
+.accordion-button:not(.collapsed) {
+    color: #9f7aea;
+    background-color: #f9f1f3;
+}
+
+.accordion-body {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #4a4a4a;
+    padding: 16px;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #fdfaf5;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+    border-top: 1px solid #e5e5e5;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .text-center h1 {
+        font-size: 28px;
+    }
+
+    .text-center p {
+        font-size: 14px;
+    }
+
+    .accordion-button {
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    .accordion-body {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .text-center h1 {
+        font-size: 24px;
+    }
+
+    .text-center p {
+        font-size: 12px;
+    }
+
+    .accordion-button {
+        font-size: 12px;
+        padding: 10px;
+    }
+
+    .accordion-body {
+        font-size: 12px;
+    }
+}
