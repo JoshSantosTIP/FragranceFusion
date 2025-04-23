@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Midnight Rose - Fragrance Fusion</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f6f1f8;
+      color: #2c2c2c;
+    }
+
+    .product-container {
+      max-width: 1000px;
+      margin: 60px auto;
+      background-color: white;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .product-image img {
+      border-radius: 10px;
+      width: 100%;
+      height: auto;
+    }
+
+    .product-title {
+      font-size: 2.5rem;
+      font-weight: 600;
+    }
+
+    .rating {
+      color: #ffcc00;
+      font-size: 1rem;
+    }
+
+    .size-options button {
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #000;
+    }
+
+    .buy-btn {
+      margin-top: 30px;
+      padding: 12px 28px;
+      font-size: 1rem;
+      background-color: #000;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .buy-btn:hover {
+      background-color: #333;
+    }
+
+    .perfume-description {
+      margin-top: 1rem;
+      font-size: 1rem;
+      color: #555;
+    }
+
+    .form-control {
+      border-radius: 5px;
+    }
+
+    .info-text {
+      font-size: 0.9rem;
+      color: #888;
+    }
+
+    .size-options button.active {
+      background-color: #000;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container product-container">
+    <div class="row g-5 align-items-center">
+      <div class="col-md-6 product-image">
+        <img src="https://via.placeholder.com/400x500.png?text=Midnight+Rose" alt="Midnight Rose Perfume">
+      </div>
+      <div class="col-md-6">
+        <h4 class="text-uppercase text-muted">Luxury Collection</h4>
+        <h1 class="product-title">Midnight Rose</h1>
+        <div class="rating mb-2">★★★★★ 4.9 (128 reviews)</div>
+        <p class="perfume-description">
+          A captivating blend of Bulgarian rose, blackcurrant, and warm amber. This elegant fragrance opens with fresh bergamot, evolves into a heart of midnight blooming jasmine, and settles into a rich base of vanilla and musk.
+        </p>
+
+        <div class="mt-4">
+          <label class="mb-2 fw-bold">Choose Size:</label>
+          <div class="size-options">
+            <button class="btn btn-outline-dark" data-size="30" data-price="30">30ml</button>
+            <button class="btn btn-outline-dark" data-size="50" data-price="45">50ml</button>
+            <button class="btn btn-outline-dark" data-size="100" data-price="65">100ml</button>
+          </div>
+        </div>
+
+        <div class="mt-4">
+          <label class="mb-2 fw-bold">Quantity:</label>
+          <div class="input-group" style="max-width: 140px;">
+            <button class="btn btn-outline-dark" id="decreaseQty">-</button>
+            <input type="text" class="form-control text-center" id="quantity" value="1" readonly>
+            <button class="btn btn-outline-dark" id="increaseQty">+</button>
+          </div>
+        </div>
+
+        <div class="price mt-3" id="totalPrice">Total: $0</div>
+
+        <button class="buy-btn">Buy Now</button>
+        <div class="info-text mt-3">
+          🚚 Free shipping | ↩️ Easy returns within 30 days
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const sizeButtons = document.querySelectorAll('.size-options button');
+    const quantityInput = document.getElementById('quantity');
+    const totalPriceDisplay = document.getElementById('totalPrice');
+
+    let selectedPrice = 0;
+    let quantity = 1;
+
+    function updateTotal() {
+      totalPriceDisplay.textContent = `Total: $${selectedPrice * quantity}`;
+    }
+
+    sizeButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        sizeButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+        selectedPrice = parseInt(button.getAttribute('data-price'));
+        updateTotal();
+      });
+    });
+
+    document.getElementById('increaseQty').addEventListener('click', () => {
+      quantity++;
+      quantityInput.value = quantity;
+      updateTotal();
+    });
+
+    document.getElementById('decreaseQty').addEventListener('click', () => {
+      if (quantity > 1) {
+        quantity--;
+        quantityInput.value = quantity;
+        updateTotal();
+      }
+    });
+
+    
+    sizeButtons[1].click();
+  </script>
+</body>
+</html>
