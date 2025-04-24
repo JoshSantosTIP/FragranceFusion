@@ -1,0 +1,74 @@
+body {
+    font-family: sans-serif;
+    background-color: #d8c4ec; /* Light purple background */
+}
+
+/* Style for the header outside the main container */
+header.container-fluid {
+    background-color: #f8f9fa; /* Optional: You can set a different background for the header if needed */
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+header.container-fluid .container h1 {
+    margin-bottom: 0; /* Remove default margin for better vertical alignment */
+    color: #343a40; /* Dark gray heading */
+}
+
+header.container-fluid .container a {
+    text-decoration: none;
+    color: #343a40; /* Dark gray links */
+}
+
+.container {
+    background-color: #ffffff; /* White container for the content */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    margin-top: 20px; /* Add some top margin to separate from the header */
+}
+
+h2 {
+    color: #212529; /* Dark heading for "Our Collections" */
+}
+
+.card {
+    border: 1px solid #d8c4ec; /* Light purple card border */
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.card-img-top {
+    height: 200px; /* Adjust as needed */
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #212529; /* Dark text */
+}
+
+.card-text {
+    color: #6c757d; /* Gray text */
+    margin-bottom: 1rem;
+}
+
+.btn-dark {
+    background-color: #ffffff; /* Dark button */
+    border-color: #d8c4ec;
+    color: #d8c4ec;
+    text-decoration: none;
+    font-size: 0.8rem;
+}
+
+.btn-dark:hover {
+    background-color: #d8c4ec; 
+    border-color: #d8c4ec;
+    color: #ffffff; /* Change the text color to #d8c4ec on hover */
+    text-decoration: underline;
+}
