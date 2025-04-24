@@ -1,0 +1,40 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F0F0F0;
+    margin: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #E3C8E3;
+    border-radius: 8px;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+.style-selection, .season-selection {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.style-option, .season-option {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    flex: 1 1 30%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.style-option:hover, .season-option:hover {
+    background-color: #D1B3D1;
+}
