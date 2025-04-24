@@ -100,25 +100,25 @@
 
         <div class="mt-4">
           <label class="mb-2 fw-bold">Choose Size:</label>
-          <div class="size-options">
-            <button class="btn btn-outline-dark" data-size="30" data-price="30">30ml</button>
-            <button class="btn btn-outline-dark" data-size="50" data-price="45">50ml</button>
-            <button class="btn btn-outline-dark" data-size="100" data-price="65">100ml</button>
-          </div>
+          <div class="size-options" id="sizeOptions">
+  <button class="btn btn-outline-dark" data-size="30">30ml</button>
+  <button class="btn btn-outline-dark" data-size="50">50ml</button>
+  <button class="btn btn-outline-dark" data-size="100">100ml</button>
+</div>
         </div>
 
         <div class="mt-4">
           <label class="mb-2 fw-bold">Quantity:</label>
           <div class="input-group" style="max-width: 140px;">
-            <button class="btn btn-outline-dark" id="decreaseQty">-</button>
-            <input type="text" class="form-control text-center" id="quantity" value="1" readonly>
-            <button class="btn btn-outline-dark" id="increaseQty">+</button>
-          </div>
+  <button class="btn btn-outline-dark" onclick="changeQty(-1)">-</button>
+  <input type="text" class="form-control text-center" id="quantity" value="1" readonly>
+  <button class="btn btn-outline-dark" onclick="changeQty(1)">+</button>
+</div>
         </div>
 
         <div class="price mt-3" id="totalPrice">Total: $0</div>
 
-        <button class="buy-btn">Buy Now</button>
+        <button class="buy-btn" data-bs-toggle="modal" data-bs-target="#buyNowModal">Buy Now</button>
         <div class="info-text mt-3">
           🚚 Free shipping | ↩️ Easy returns within 30 days
         </div>
@@ -126,43 +126,27 @@
     </div>
   </div>
 
-  <script>
-    const sizeButtons = document.querySelectorAll('.size-options button');
-    const quantityInput = document.getElementById('quantity');
-    const totalPriceDisplay = document.getElementById('totalPrice');
-
-    let selectedPrice = 0;
-    let quantity = 1;
-
-    function updateTotal() {
-      totalPriceDisplay.textContent = `Total: $${selectedPrice * quantity}`;
-    }
-
-    sizeButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        sizeButtons.forEach(btn => btn.classList.remove('active'));
-        button.classList.add('active');
-        selectedPrice = parseInt(button.getAttribute('data-price'));
-        updateTotal();
-      });
-    });
-
-    document.getElementById('increaseQty').addEventListener('click', () => {
-      quantity++;
-      quantityInput.value = quantity;
-      updateTotal();
-    });
-
-    document.getElementById('decreaseQty').addEventListener('click', () => {
-      if (quantity > 1) {
-        quantity--;
-        quantityInput.value = quantity;
-        updateTotal();
-      }
-    });
-
-    
-    sizeButtons[1].click();
-  </script>
+  <!-- Buy Now Modal -->
+<div class="modal fade" id="buyNowModal" tabindex="-1" aria-labelledby="buyNowModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="buyNowModalLabel">Order Summary</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Size:</strong> <span id="summarySize"></span></p>
+        <p><strong>Quantity:</strong> <span id="summaryQty"></span></p>
+        <p><strong>Total:</strong> <span id="summaryTotal"></span></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Confirm Purchase</button>
+      </div>
+    </div>
+  </div>
+</div>
+  <script src = "../js/BuyNow.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

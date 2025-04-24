@@ -1,43 +1,59 @@
-function changeQty(change) {
-  const qtyInput = document.getElementById("qty");
-  let qty = parseInt(qtyInput.value);
-  qty = Math.max(1, qty + change);
-  qtyInput.value = qty;
-  updatePrice();
-}
+document.addEventListener("DOMContentLoaded", () => {
+  // Update quantity based on user input
+  function changeQty(change) {
+    const qtyInput = document.getElementById("quantity");
+    if (!qtyInput) {
+      console.error("Quantity input not found!");
+      return;
+    }
 
-function updatePrice() {
-  const activeSize = document.querySelector("#sizeOptions .active");
-  const price = parseFloat(activeSize.dataset.price);
-  const qty = parseInt(document.getElementById("qty").value);
-  const total = price * qty;
-  document.getElementById("priceDisplay").textContent = `$${total}`;
-}
+    let qty = parseInt(qtyInput.value);
+    qty = Math.max(1, qty + change); // Ensure quantity is at least 1
+    qtyInput.value = qty;
+    updatePrice();
+  }
 
-function selectSize(button) {
-  document.querySelectorAll("#sizeOptions button").forEach(btn => btn.classList.remove("active"));
-  button.classList.add("active");
-  updatePrice();
-}
+  // Update the total price based on selected size and quantity
+  function updatePrice() {
+    const activeSize = document.querySelector("#sizeOptions .active");
+    if (!activeSize) {
+      console.error("No size selected!");
+      return;
+    }
 
+    const qtyInput = document.getElementById("quantity");
+    if (!qtyInput) {
+      console.error("Quantity input not found!");
+      return;
+    }
 
-document.querySelectorAll("#sizeOptions button").forEach(btn => {
-  btn.addEventListener("click", function () {
-    selectSize(this);
+    const price = parseFloat(activeSize.dataset.price);
+    const qty = parseInt(qtyInput.value);
+    const total = price * qty;
+    document.getElementById("totalPrice").textContent = `Total: $${total.toFixed(2)}`;
+  }
+
+  // Handle size selection
+  function selectSize(button) {
+    document.querySelectorAll("#sizeOptions button").forEach(btn => btn.classList.remove("active"));
+    button.classList.add("active");
+    updatePrice();
+  }
+
+  // Add event listeners to size buttons
+  document.querySelectorAll("#sizeOptions button").forEach(btn => {
+    btn.addEventListener("click", function () {
+      selectSize(this);
+    });
   });
+
+  // Initialize default size selection
+  const defaultSize = document.querySelector("#sizeOptions button");
+  if (defaultSize) {
+    defaultSize.click(); // Select the first size by default
+  }
+
+  // Attach quantity change handlers
+  document.querySelector(".btn-outline-dark[onclick='changeQty(-1)']").addEventListener("click", () => changeQty(-1));
+  document.querySelector(".btn-outline-dark[onclick='changeQty(1)']").addEventListener("click", () => changeQty(1));
 });
-
-
-function buyNow() {
-  const size = document.querySelector("#sizeOptions .active").innerText;
-  const price = parseFloat(document.querySelector("#sizeOptions .active").dataset.price);
-  const qty = parseInt(document.getElementById("qty").value);
-  const total = price * qty;
-
-  document.getElementById("summarySize").innerText = size;
-  document.getElementById("summaryQty").innerText = qty;
-  document.getElementById("summaryTotal").innerText = `$${total}`;
-
-  const modal = new bootstrap.Modal(document.getElementById('buyNowModal'));
-  modal.show();
-}
