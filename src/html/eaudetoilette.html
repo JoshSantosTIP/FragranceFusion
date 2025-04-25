@@ -5,8 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/seasons.css">
     <title>Fragrance Selector</title>
+      <style>
+        /* Navbar Styles */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            border-bottom: 1px solid #ccc;
+        }
+        .navbar .logo {
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        .navbar .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+        .navbar .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+        .navbar .auth-buttons {
+            display: flex;
+            gap: 0.5rem;
+        }
+        .navbar .auth-buttons button {
+            padding: 0.5rem 1rem;
+            border: 1px solid #333;
+            background: transparent;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: 500;
+        }
+        .navbar .auth-buttons .signup {
+            background: #333;
+            color: white;
+        }
+    </style>
 </head>
 <body>
+
+    <!-- Navbar Start -->
+    <div class="navbar">
+        <div class="logo">FRAGRANCE FUSION</div>
+        <div class="nav-links">
+            <a href="#">Collections</a>
+            <a href="#">About Us</a>
+            <a href="#">Contact</a>
+            <a href="#">FAQ</a>
+        </div>
+        <div class="auth-buttons">
+            <button onclick="location.href='login.html'">Login</button>
+            <button class="signup" onclick="location.href='signup.html'">Sign Up</button>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+
+
     <div class="container">
         <h1 id="category-heading">Find Your Perfect Fragrance</h1>
         <p>Discover scents tailored to your preferences</p>
@@ -21,7 +80,7 @@
 
             
             <div class="style-option" onclick="redirectTo('../html/cocomademoiselle1.html')">
-                <img src="../assets/FORWOMEN.jpg" alt="Female" style="max-width: 100%; height: auto;">
+                <img src="../assets/FORWOMEN4.jpg" alt="Female" style="max-width: 100%; height: auto;">
                 <h3>Female</h3>
                 <p>Elegant and refined fragrances</p>
             </div>            
