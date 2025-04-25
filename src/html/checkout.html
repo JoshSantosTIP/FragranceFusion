@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fragrance Fusion</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f3e1e3;
+    }
+
+    .container {
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: left;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .main {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .img-placeholder {
+      width: 60px;
+      height: 60px;
+      background: #ccc;
+      margin-right: 10px;
+    }
+
+    .price {
+      margin-left: auto;
+    }
+
+    .summary .row {
+      display: flex;
+      justify-content: space-between;
+      margin: 5px 0;
+    }
+
+    .summary .total {
+      font-weight: bold;
+    }
+
+    .payment input[type="text"],
+    .payment input[type="number"],
+    .payment select,
+    .shipping-details input[type="text"],
+    .size-select,
+    .quantity-input {
+      width: 100%;
+      padding: 8px;
+      margin: 5px 0 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .payment button {
+      width: 100%;
+      padding: 10px;
+      background: black;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .shipping-details .row {
+      display: flex;
+      gap: 10px;
+    }
+
+    .shipping-options {
+      display: flex;
+      gap: 10px;
+    }
+
+    .option {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .option.selected {
+      border: 2px solid black;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>FRAGRANCE FUSION</h1>
+    <div class="main">
+      <!-- Order Summary -->
+      <div class="card order-summary">
+        <h2>Order Summary</h2>
+        <div class="item">
+          <div class="img-placeholder"></div>
+          <div>
+            <p><strong>Signature Fragrance</strong></p>
+            <select class="size-select" onchange="updateOrder()">
+              <option value="35">30ml - $35</option>
+              <option value="45">60ml - $45</option>
+              <option value="55">100ml - $55</option>
+            </select>
+            <input class="quantity-input" type="number" value="1" min="1" onchange="updateOrder()">
+          </div>
+          <div class="price item-price">$35.00</div>
+        </div>
+        <div class="summary">
+          <div class="row"><span>Subtotal</span><span id="subtotalAmount">$35.00</span></div>
+          <div class="row"><span>Tax</span><span id="taxAmount">$2.80</span></div>
+          <div class="row"><span>Shipping</span><span id="shippingCost">$4.99</span></div>
+          <hr>
+          <div class="row total"><span>Total</span><span id="totalAmount">$42.79</span></div>
+        </div>
+      </div>
+
+      <!-- Payment Method -->
+      <div class="card payment">
+        <h2>Payment Method</h2>
+        <label for="paymentMethod">Choose Payment Method</label>
+        <select id="paymentMethod" onchange="toggleCashInput()">
+          <option value="Cash">Cash</option>
+          <option value="Credit Card">Credit Card</option>
+          <option value="GCash">GCash</option>
+        </select>
+
+        <div id="cashSection">
+          <label>Cash Amount</label>
+          <input type="number" id="cashAmount" placeholder="Enter amount">
+          <label>Change</label>
+          <input type="text" id="change" readonly>
+        </div>
+
+        <button onclick="calculateChange()">Complete Purchase</button>
+      </div>
+
+      <!-- Shipping Details -->
+      <div class="card shipping-details">
+        <h2>Shipping Details</h2>
+        <input type="text" placeholder="Full Name">
+        <input type="text" placeholder="Address">
+        <div class="row">
+          <input type="text" placeholder="City">
+          <input type="text" placeholder="Postal Code">
+        </div>
+        <label>Shipping Method</label>
+        <div class="shipping-options">
+          <div class="option selected" onclick="selectShipping(this, 4.99)">
+            <strong>Standard Shipping</strong><br>
+            <small>4-5 business days</small><br>$4.99
+          </div>
+          <div class="option" onclick="selectShipping(this, 14.99)">
+            <strong>Express Shipping</strong><br>
+            <small>1-2 business days</small><br>$14.99
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    let shippingCost = 4.99;
+
+    function updateOrder() {
+      const size = parseFloat(document.querySelector('.size-select').value);
+      const quantity = parseInt(document.querySelector('.quantity-input').value);
+      const itemTotal = size * quantity;
+
+      document.querySelector('.item-price').innerText = `$${itemTotal.toFixed(2)}`;
+      document.getElementById('subtotalAmount').innerText = `$${itemTotal.toFixed(2)}`;
+
+      const tax = itemTotal * 0.08;
+      const total = itemTotal + tax + shippingCost;
+
+      document.getElementById('taxAmount').innerText = `$${tax.toFixed(2)}`;
+      document.getElementById('totalAmount').innerText = `$${total.toFixed(2)}`;
+    }
+
+    function calculateChange() {
+      const method = document.getElementById('paymentMethod').value;
+      if (method !== 'Cash') {
+        alert(`Purchase completed using ${method}`);
+        return;
+      }
+      const total = parseFloat(document.getElementById('totalAmount').innerText.replace('$', ''));
+      const cash = parseFloat(document.getElementById('cashAmount').value);
+      const change = cash - total;
+      document.getElementById('change').value = change >= 0 ? `$${change.toFixed(2)}` : 'Insufficient';
+    }
+
+    function toggleCashInput() {
+      const method = document.getElementById('paymentMethod').value;
+      const cashSection = document.getElementById('cashSection');
+      cashSection.style.display = method === 'Cash' ? 'block' : 'none';
+    }
+
+    function selectShipping(elem, cost) {
+      document.querySelectorAll('.option').forEach(opt => opt.classList.remove('selected'));
+      elem.classList.add('selected');
+      shippingCost = cost;
+      document.getElementById('shippingCost').innerText = `$${cost.toFixed(2)}`;
+      updateOrder();
+    }
+
+    // Initialize cash section and calculate default total
+    toggleCashInput();
+    updateOrder();
+  </script>
+</body>
+</html>
