@@ -160,5 +160,54 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Custom JS -->
     <script src="script.js"></script>
+    <script>
+        // Retrieve cart data from localStorage
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      
+        // Function to populate the order summary
+        function populateOrderSummary() {
+          const orderSummaryContainer = document.querySelector(".card-body");
+          const orderItemsContainer = document.createElement("div");
+          orderItemsContainer.classList.add("order-items");
+      
+          let subtotal = 0;
+      
+          // Loop through cart items and create HTML for each
+          cart.forEach(item => {
+            const itemTotal = item.price * item.quantity;
+            subtotal += itemTotal;
+      
+            const orderItemHTML = `
+              <div class="order-item d-flex justify-content-between py-2 border-bottom">
+                <div class="d-flex">
+                  <img src="${item.img}" alt="${item.name}" class="me-3" style="width: 80px; height: 80px;">
+                  <div>
+                    <strong>${item.name}</strong>
+                    <div class="text-muted">Quantity: ${item.quantity}</div>
+                  </div>
+                </div>
+                <div class="fw-bold">$${itemTotal.toFixed(2)}</div>
+              </div>
+            `;
+      
+            orderItemsContainer.innerHTML += orderItemHTML;
+          });
+      
+          // Calculate tax and total
+          const tax = subtotal * 0.08; // Assuming 8% tax
+          const total = subtotal + tax + 4.99; // Adding flat shipping fee of $4.99
+      
+          // Add order items to the page
+          orderSummaryContainer.insertBefore(orderItemsContainer, orderSummaryContainer.querySelector(".mt-4"));
+      
+          // Update subtotal, tax, and total
+          document.querySelector(".mt-4 .d-flex:nth-child(1) span:last-child").textContent = `$${subtotal.toFixed(2)}`;
+          document.querySelector(".mt-4 .d-flex:nth-child(2) span:last-child").textContent = `$${tax.toFixed(2)}`;
+          document.querySelector(".mt-4 .d-flex:nth-child(4) span:last-child").textContent = `$${total.toFixed(2)}`;
+        }
+      
+        // Populate the order summary on page load
+        populateOrderSummary();
+      </script>
 </body>
 </html>
