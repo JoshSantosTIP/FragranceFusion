@@ -21,7 +21,7 @@ function displayCartItems() {
 
     let subtotal = 0;
 
-    cartItemsList.innerHTML = cart.map(item => {
+    cartItemsList.innerHTML = cart.map((item, index) => {
         const itemTotal = item.price * item.quantity;
         subtotal += itemTotal;
 
@@ -30,7 +30,11 @@ function displayCartItems() {
                 <div>
                     <h6>${item.name}</h6>
                     <p>Price: $${item.price.toFixed(2)}</p>
-                    <p>Quantity: ${item.quantity}</p>
+                    <div class="quantity-controls">
+                        <button class="btn btn-sm btn-outline-secondary" onclick="decreaseQuantity(${index})">-</button>
+                        <span class="mx-2">${item.quantity}</span>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="increaseQuantity(${index})">+</button>
+                    </div>
                 </div>
                 <div>
                     <p>Total: $${itemTotal.toFixed(2)}</p>
@@ -59,6 +63,22 @@ function attachRemoveEventListeners() {
     });
 }
 
+// Function to increase the quantity of an item
+function increaseQuantity(index) {
+    cart[index].quantity += 1;
+    localStorage.setItem('cart', JSON.stringify(cart));
+    displayCartItems();
+}
+
+// Function to decrease the quantity of an item
+function decreaseQuantity(index) {
+    if (cart[index].quantity > 1) {
+        cart[index].quantity -= 1;
+        localStorage.setItem('cart', JSON.stringify(cart));
+        displayCartItems();
+    }
+}
+
 // Function to remove an item from the cart
 function removeItem(itemId) {
     const itemIndex = cart.findIndex(cartItem => cartItem.id === itemId);
@@ -67,6 +87,36 @@ function removeItem(itemId) {
         localStorage.setItem('cart', JSON.stringify(cart)); // Update localStorage
         displayCartItems(); // Re-render the cart items
     }
+}
+
+// Function to remove all items from the cart
+function removeAllItems() {
+    cart.length = 0; // Clear the cart array
+    localStorage.removeItem('cart'); // Remove the cart data from localStorage
+    displayCartItems(); // Re-render the cart items
+}
+
+// Function to add an item to the cart
+function addToCart(item) {
+    const existingItem = cart.find(cartItem => cartItem.id === item.id);
+    if (existingItem) {
+        existingItem.quantity += 1; // Increase quantity if item already exists
+    } else {
+        cart.push(item); // Add new item to the cart
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart)); // Save updated cart to localStorage
+    alert(`${item.name} has been added to your cart.`);
+}
+
+// Function to proceed to checkout
+function proceedToCheckout() {
+    if (cart.length === 0) {
+        alert('Your cart is empty. Please add items before proceeding to checkout.');
+        return;
+    }
+    localStorage.setItem('checkoutCart', JSON.stringify(cart)); // Save the cart to localStorage under the key 'checkoutCart'
+    window.location.href = 'checkout.html'; // Redirect to the checkout page
 }
 
 // Display cart items on page load
@@ -86,25 +136,3 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
-
-// Function to add an item to the cart
-function addToCart(item) {
-    const existingItem = cart.find(cartItem => cartItem.id === item.id);
-    if (existingItem) {
-        existingItem.quantity += 1; // Increase quantity if item already exists
-    } else {
-        cart.push(item); // Add new item to the cart
-    }
-
-    localStorage.setItem('cart', JSON.stringify(cart)); // Save updated cart to localStorage
-    alert(`${item.name} has been added to your cart.`);
-}
-
-function proceedToCheckout() {
-    if (cart.length === 0) {
-        alert('Your cart is empty. Please add items before proceeding to checkout.');
-        return;
-    }
-    localStorage.setItem('checkoutCart', JSON.stringify(cart)); // Save the cart to localStorage under the key 'checkoutCart'
-    window.location.href = 'checkout.html'; // Redirect to the checkout page
-}
