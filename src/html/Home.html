@@ -12,12 +12,13 @@
 <body>
     <div class="homepage">
         <!-- Navbar -->
-        <nav class="simple-navbar navbar navbar-expand-lg">
+        <nav class="simple-navbar navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
                 <div class="nav-brand">
                     <a class="navbar-brand" href="Home.html">FRAGRANCE FUSION</a>
                 </div>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <!-- Hamburger Menu Button -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
@@ -35,18 +36,16 @@
             </div>
         </nav>
 
+        <!-- Cologne Category Navbar -->
+        <nav class="cologne-navbar bg-light py-2">
+            <div class="container d-flex flex-wrap justify-content-center gap-3">
+                <a href="#eau-de-cologne" class="cologne-link">Eau de Cologne</a>
+                <a href="#eau-de-parfum" class="cologne-link">Eau de Parfum</a>
+                <a href="#eau-de-toilette" class="cologne-link">Eau de Toilette</a>
+                <a href="#eau-de-fraiche" class="cologne-link">Eau de Fraiche</a>
+            </div>
+        </nav>
 
-<!-- Cologne Category Navbar -->
-<nav class="cologne-navbar">
-    <div class="cologne-links">
-        <a href="#eau-de-cologne" class="cologne-link">Eau de Cologne</a>
-        <a href="#eau-de-parfum" class="cologne-link">Eau de Parfum</a>
-        <a href="#eau-de-toilette" class="cologne-link">Eau de Toilette</a>
-        <a href="#eau-de-fraiche" class="cologne-link">Eau de Fraiche</a>
-    </div>
-</nav>
-
-        
         <!-- Homepage Content -->
         <div class="homepage-content">
             <!-- Hero Section -->
@@ -59,10 +58,10 @@
                         Shop Now
                     </a>
                     <div class="row mt-4">
-                        <div class="col-md-6">
+                        <div class="col-md-6 col-12 mb-3">
                             <div class="frame-2 image-placeholder">Decorative Frame</div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6 col-12">
                             <div class="frame-3 image-placeholder">Main Product Image</div>
                         </div>
                     </div>
@@ -73,7 +72,7 @@
             <section class="container my-5">
                 <h2 class="section-title text-center mb-5">Perfume Categories</h2>
                 <div class="row perfume-categories">
-                    <div class="col-md-3 col-sm-6 mb-4" id="eau-de-cologne" >
+                    <div class="col-md-3 col-sm-6 col-12 mb-4" id="eau-de-cologne">
                         <div class="perfume-category text-center">
                             <div class="image-placeholder mb-3">
                                 <a href="../html/eaudecologneseasons.html">
@@ -86,7 +85,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3 col-sm-6 mb-4" id="eau-de-parfum">
+                    <div class="col-md-3 col-sm-6 col-12 mb-4" id="eau-de-parfum">
                         <div class="perfume-category text-center">
                             <div class="image-placeholder mb-3">
                                 <a href="../html/eaudeparfumseasons.html">
@@ -96,7 +95,7 @@
                             <div class="perfume-type">Eau De Parfum Collection</div>
                         </div>
                     </div>
-                    <div class="col-md-3 col-sm-6 mb-4" id="eau-de-toilette">
+                    <div class="col-md-3 col-sm-6 col-12 mb-4" id="eau-de-toilette">
                         <div class="perfume-category text-center">
                             <div class="image-placeholder mb-3">
                                 <a href="../html/eaudetoilette.html">
@@ -106,7 +105,7 @@
                             <div class="perfume-type">Eau De Toilette Collection</div>
                         </div>
                     </div>
-                    <div class="col-md-3 col-sm-6 mb-4" >
+                    <div class="col-md-3 col-sm-6 col-12 mb-4">
                         <div class="perfume-category text-center">
                             <div class="image-placeholder mb-3">
                                 <a href="../html/eaudefraiche.html">
@@ -131,7 +130,7 @@
                         Stay updated with our latest collections and exclusive offers
                     </p>
                     <div class="row justify-content-center">
-                        <div class="col-md-6">
+                        <div class="col-md-6 col-12">
                             <div class="input-group mb-3">
                                 <input type="email" class="form-control" placeholder="Enter your email">
                                 <button class="btn btn-dark" type="button">Subscribe Now</button>
@@ -145,24 +144,24 @@
             <footer class="footer py-5 bg-dark text-white">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-3 mb-4">
+                        <div class="col-md-3 col-12 mb-4">
                             <h5 class="footer-title">About Us</h5>
                             <p class="footer-description">
                                 Crafting unique fragrances that tell stories and create memories.
                             </p>
                         </div>
-                        <div class="col-md-3 mb-4">
+                        <div class="col-md-3 col-12 mb-4">
                             <h5 class="footer-title">Quick Links</h5>
                             <a href="/collections" class="footer-link d-block">Collections</a>
                             <a href="/contact" class="footer-link d-block">Contact Us</a>
                             <a href="/faq" class="footer-link d-block">FAQ</a>
                         </div>
-                        <div class="col-md-3 mb-4">
+                        <div class="col-md-3 col-12 mb-4">
                             <h5 class="footer-title">Customer Care</h5>
                             <a href="#" class="footer-link d-block">Shipping Info</a>
                             <a href="#" class="footer-link d-block">Returns</a>
                         </div>
-                        <div class="col-md-3 mb-4">
+                        <div class="col-md-3 col-12 mb-4">
                             <h5 class="footer-title">Follow Us</h5>
                             <div class="social-icons d-flex gap-3">
                                 <div class="image-placeholder">Social Icon 1</div>

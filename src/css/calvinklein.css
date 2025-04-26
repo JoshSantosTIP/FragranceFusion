@@ -1,3 +1,4 @@
+/* General Styles */
 body {
     background-color: #ffffff;
     color: rgb(0, 0, 0);
@@ -13,21 +14,57 @@ body {
     text-align: center;
 }
 
+/* Navbar Styles */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.navbar-nav .nav-link {
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #555;
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+/* Product Section */
 .product {
     border: 2px solid #3b3b3b;
     margin: 20px 0;
     padding: 10px;
     background-color: #ffffff;
+    text-align: center;
 }
 
 .product img {
     max-width: 100%;
     height: auto;
+    margin-bottom: 15px;
 }
 
 .price {
     font-size: 1.5em;
     color: #FF6347; /* Tomato color */
+    margin-bottom: 15px;
 }
 
 .add-to-cart {
@@ -36,9 +73,38 @@ body {
     color: white;
     padding: 10px 20px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease;
 }
 
 .add-to-cart:hover {
     background-color: #FF4500; /* OrangeRed */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .navbar-collapse {
+        background-color: white;
+        padding: 1rem;
+        margin-top: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-nav {
+        text-align: center;
+    }
+
+    .product {
+        margin: 10px 0;
+        padding: 15px;
+    }
+
+    .add-to-cart {
+        padding: 8px 16px;
+        font-size: 0.9em;
+    }
 }

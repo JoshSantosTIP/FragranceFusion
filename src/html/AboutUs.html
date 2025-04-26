@@ -12,22 +12,27 @@
 <body>
     <div class="about-us">
         <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg fixed-top" id="mainNavbar">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
             <div class="container">
                 <a class="navbar-brand" href="Home.html">FRAGRANCE FUSION</a>
-                
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                
                 <div class="collapse navbar-collapse" id="navbarContent">
-                    <div class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <a class="nav-link" href="collections.html">Collections</a>
-                        <a class="nav-link active" href="aboutus.html">About</a>
-                        <a class="nav-link" href="ContactForm.html">Contact</a>
-                        <a class="nav-link" href="FAQ.html">FAQ</a>
-                    </div>
-
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="collections.html">Collections</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="aboutus.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="ContactForm.html">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="FAQ.html">FAQ</a>
+                        </li>
+                    </ul>
                     <div class="d-flex">
                         <a href="login.html" class="btn btn-outline-dark me-2">Login</a>
                         <a href="signup.html" class="btn btn-primary">Sign Up</a>
@@ -45,15 +50,15 @@
             <div class="about-image image-placeholder text-center py-5 bg-light mb-5">About Us Main Image</div>
 
             <div class="stats-container row text-center mb-5">
-                <div class="stat-card col-md-4">
+                <div class="stat-card col-md-4 col-12 mb-4">
                     <div class="stat-number display-4">150+</div>
                     <div class="stat-label h5">Unique Scents</div>
                 </div>
-                <div class="stat-card col-md-4">
+                <div class="stat-card col-md-4 col-12 mb-4">
                     <div class="stat-number display-4">50+</div>
                     <div class="stat-label h5">Countries Served</div>
                 </div>
-                <div class="stat-card col-md-4">
+                <div class="stat-card col-md-4 col-12 mb-4">
                     <div class="stat-number display-4">10K+</div>
                     <div class="stat-label h5">Happy Customers</div>
                 </div>
@@ -67,15 +72,15 @@
 
             <h2 class="section-title text-center my-5">Our Values</h2>
             <div class="values-container row mb-5">
-                <div class="value-card col-md-4 p-4">
+                <div class="value-card col-md-4 col-12 p-4">
                     <h3 class="value-title text-center">Quality</h3>
                     <p class="value-description text-center">We use only the highest quality ingredients, sourced ethically from around the world.</p>
                 </div>
-                <div class="value-card col-md-4 p-4">
+                <div class="value-card col-md-4 col-12 p-4">
                     <h3 class="value-title text-center">Creativity</h3>
                     <p class="value-description text-center">Our perfumers are artists, constantly exploring new scent combinations and techniques.</p>
                 </div>
-                <div class="value-card col-md-4 p-4">
+                <div class="value-card col-md-4 col-12 p-4">
                     <h3 class="value-title text-center">Sustainability</h3>
                     <p class="value-description text-center">We are committed to eco-friendly practices, from packaging to production.</p>
                 </div>
@@ -83,19 +88,19 @@
 
             <h2 class="section-title text-center my-5">Meet the Team</h2>
             <div class="team-grid row mb-5">
-                <div class="team-member col-md-4 text-center p-4">
+                <div class="team-member col-md-4 col-12 text-center p-4">
                     <div class="member-image image-placeholder mx-auto py-5 bg-light mb-3">Team Member 1</div>
                     <h3 class="member-name">Alex Kim</h3>
                     <p class="member-position text-muted">Founder & Master Perfumer</p>
                     <p class="member-bio">Alex brings over 15 years of experience in the fragrance industry.</p>
                 </div>
-                <div class="team-member col-md-4 text-center p-4">
+                <div class="team-member col-md-4 col-12 text-center p-4">
                     <div class="member-image image-placeholder mx-auto py-5 bg-light mb-3">Team Member 2</div>
                     <h3 class="member-name">Jamie Lee</h3>
                     <p class="member-position text-muted">Creative Director</p>
                     <p class="member-bio">Jamie leads our design and branding efforts.</p>
                 </div>
-                <div class="team-member col-md-4 text-center p-4">
+                <div class="team-member col-md-4 col-12 text-center p-4">
                     <div class="member-image image-placeholder mx-auto py-5 bg-light mb-3">Team Member 3</div>
                     <h3 class="member-name">Morgan Smith</h3>
                     <p class="member-position text-muted">Sustainability Lead</p>
@@ -108,9 +113,9 @@
                 <p class="newsletter-text mb-4">
                     Be the first to know about new collections, exclusive offers, and more.
                 </p>
-                <div class="newsletter-form d-flex justify-content-center">
+                <div class="newsletter-form d-flex flex-column flex-md-row justify-content-center">
                     <input 
-                        class="newsletter-input form-control w-50 me-2" 
+                        class="newsletter-input form-control mb-3 mb-md-0 w-100 w-md-50 me-md-2" 
                         type="email" 
                         placeholder="Enter your email" 
                     />
