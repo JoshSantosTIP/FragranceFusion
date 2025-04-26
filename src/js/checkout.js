@@ -44,18 +44,9 @@ function displayCheckoutItems() {
     totalField.textContent = subtotal.toFixed(2); // Assuming no additional shipping or taxes for now
 }
 
-// Ensure only one subtotal is displayed
-function removeDuplicateSubtotal() {
-    const duplicateSubtotalElements = document.querySelectorAll('#checkout-subtotal');
-    if (duplicateSubtotalElements.length > 1) {
-        for (let i = 1; i < duplicateSubtotalElements.length; i++) {
-            duplicateSubtotalElements[i].remove(); // Remove duplicate subtotals
-        }
-    }
-}
-
 // Display checkout items on page load
 document.addEventListener('DOMContentLoaded', () => {
     displayCheckoutItems();
-    removeDuplicateSubtotal(); // Remove duplicate subtotal elements
 });
+
+
