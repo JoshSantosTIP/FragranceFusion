@@ -1,213 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fragrance Fusion - Checkout</title>
-    <!-- Bootstrap 5.0.2 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="../css/checkout.css">
+  <meta charset="UTF-8">
+  <title>Fragrance Fusion</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f3e1e3;
+    }
+
+    .container {
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: left;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .main {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .img-placeholder {
+      width: 60px;
+      height: 60px;
+      background: #ccc;
+      margin-right: 10px;
+    }
+
+    .price {
+      margin-left: auto;
+    }
+
+    .summary .row {
+      display: flex;
+      justify-content: space-between;
+      margin: 5px 0;
+    }
+
+    .summary .total {
+      font-weight: bold;
+    }
+
+    .payment input[type="text"],
+    .payment input[type="number"],
+    .payment select,
+    .shipping-details input[type="text"],
+    .size-select,
+    .quantity-input {
+      width: 100%;
+      padding: 8px;
+      margin: 5px 0 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .payment button {
+      width: 100%;
+      padding: 10px;
+      background: black;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .shipping-details .row {
+      display: flex;
+      gap: 10px;
+    }
+
+    .shipping-options {
+      display: flex;
+      gap: 10px;
+    }
+
+    .option {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .option.selected {
+      border: 2px solid black;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-            <a class="navbar-brand" href="Home.html">Fragrance Fusion</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="Home.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Shop</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="AboutUs.html">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="ContactForm.html">Contact</a>
-                    </li>
-                </ul>
-            </div>
+  <div class="container">
+    <h1>FRAGRANCE FUSION</h1>
+    <div class="main">
+      <!-- Order Summary -->
+      <div class="card order-summary">
+        <h2>Order Summary</h2>
+        <div class="item">
+          <div class="img-placeholder"></div>
+          <div>
+            <p><strong>Signature Fragrance</strong></p>
+            <select class="size-select" onchange="updateOrder()">
+              <option value="35">30ml - $35</option>
+              <option value="45">60ml - $45</option>
+              <option value="55">100ml - $55</option>
+            </select>
+            <input class="quantity-input" type="number" value="1" min="1" onchange="updateOrder()">
+          </div>
+          <div class="price item-price">$35.00</div>
         </div>
-    </nav>
-
-    <div class="container my-5">
-        <div class="card shadow-sm">
-            <div class="card-header bg-purple text-white">
-                <h1 class="text-center mb-0">FRAGRANCE FUSION</h1>
-            </div>
-            <div class="card-body">
-                <!-- Order Summary Section -->
-                <h2 class="section-title">Order Summary</h2>
-                <div class="order-item d-flex justify-content-between py-2 border-bottom">
-                    <div class="d-flex">
-                        <img src="placeholder.png" alt="Signature Fragrance" class="me-3" style="width: 80px; height: 80px;">
-                        <div>
-                            <strong>Signature Fragrance</strong>
-                            <div class="text-muted">Quantity: 1</div>
-                        </div>
-                    </div>
-                    <div class="fw-bold">$129.99</div>
-                </div>
-                <div class="order-item d-flex justify-content-between py-2 border-bottom">
-                    <div class="d-flex">
-                        <img src="placeholder.png" alt="Summer Collection" class="me-3" style="width: 80px; height: 80px;">
-                        <div>
-                            <strong>Summer Collection</strong>
-                            <div class="text-muted">Quantity: 2</div>
-                        </div>
-                    </div>
-                    <div class="fw-bold">$179.98</div>
-                </div>
-                <div class="mt-4">
-                    <div class="d-flex justify-content-between">
-                        <span>Subtotal</span>
-                        <span>$309.97</span>
-                    </div>
-                    <div class="d-flex justify-content-between">
-                        <span>Tax</span>
-                        <span>$24.80</span>
-                    </div>
-                    <div class="d-flex justify-content-between">
-                        <span>Shipping</span>
-                        <span>$4.99</span>
-                    </div>
-                    <div class="d-flex justify-content-between fw-bold border-top pt-2 mt-2">
-                        <span>Total</span>
-                        <span>$339.76</span>
-                    </div>
-                </div>
-                <hr class="my-4">
-
-                <!-- Payment Method Section -->
-                <h2 class="section-title">Payment Method</h2>
-                <div class="row g-3">
-                    <div class="col-md-6">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="paymentMethod" id="cash" checked>
-                            <label class="form-check-label" for="cash">Cash</label>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="cashAmount" class="form-label">Cash Amount</label>
-                        <input type="text" class="form-control" id="cashAmount">
-                    </div>
-                    <div class="col-md-6">
-                        <label for="change" class="form-label">Change</label>
-                        <input type="text" class="form-control" id="change" readonly>
-                    </div>
-                </div>
-                <hr class="my-4">
-
-                <!-- Shipping Details Section -->
-                <h2 class="section-title">Shipping Details</h2>
-                <div class="row g-3">
-                    <div class="col-md-6">
-                        <label for="fullName" class="form-label">Full Name</label>
-                        <input type="text" class="form-control" id="fullName">
-                    </div>
-                    <div class="col-12">
-                        <label for="address" class="form-label">Address</label>
-                        <input type="text" class="form-control" id="address">
-                    </div>
-                    <div class="col-md-4">
-                        <label for="city" class="form-label">City</label>
-                        <input type="text" class="form-control" id="city">
-                    </div>
-                    <div class="col-md-4">
-                        <label for="postalCode" class="form-label">Postal Code</label>
-                        <input type="text" class="form-control" id="postalCode">
-                    </div>
-                    <div class="col-md-4">
-                        <label for="shippingMethod" class="form-label">Shipping Method</label>
-                        <select class="form-select" id="shippingMethod">
-                            <option selected>Choose...</option>
-                            <option value="standard">Standard Shipping</option>
-                            <option value="express">Express Shipping</option>
-                        </select>
-                    </div>
-                </div>
-                <hr class="my-4">
-
-                <!-- Shipping Options -->
-                <div class="shipping-option p-3 mb-3 border rounded" data-shipping="standard">
-                    <div>
-                        <h5 class="mb-1">Standard Shipping</h5>
-                        <p class="mb-0 text-muted">4-5 business days</p>
-                    </div>
-                    <div class="shipping-price">$4.99</div>
-                </div>
-                <div class="shipping-option p-3 mb-3 border rounded" data-shipping="express">
-                    <div>
-                        <h5 class="mb-1">Express Shipping</h5>
-                        <p class="mb-0 text-muted">1-2 business days</p>
-                    </div>
-                    <div class="shipping-price">$14.99</div>
-                </div>
-
-                <!-- Complete Purchase Button -->
-                <button class="btn btn-purple w-100 py-3 mt-3">Complete Purchase</button>
-            </div>
+        <div class="summary">
+          <div class="row"><span>Subtotal</span><span id="subtotalAmount">$35.00</span></div>
+          <div class="row"><span>Tax</span><span id="taxAmount">$2.80</span></div>
+          <div class="row"><span>Shipping</span><span id="shippingCost">$4.99</span></div>
+          <hr>
+          <div class="row total"><span>Total</span><span id="totalAmount">$42.79</span></div>
         </div>
+      </div>
+
+      <!-- Payment Method -->
+      <div class="card payment">
+        <h2>Payment Method</h2>
+        <label for="paymentMethod">Choose Payment Method</label>
+        <select id="paymentMethod" onchange="toggleCashInput()">
+          <option value="Cash">Cash</option>
+          <option value="Credit Card">Credit Card</option>
+          <option value="GCash">GCash</option>
+        </select>
+
+        <div id="cashSection">
+          <label>Cash Amount</label>
+          <input type="number" id="cashAmount" placeholder="Enter amount">
+          <label>Change</label>
+          <input type="text" id="change" readonly>
+        </div>
+
+        <button onclick="calculateChange()">Complete Purchase</button>
+      </div>
+
+      <!-- Shipping Details -->
+      <div class="card shipping-details">
+        <h2>Shipping Details</h2>
+        <input type="text" placeholder="Full Name">
+        <input type="text" placeholder="Address">
+        <div class="row">
+          <input type="text" placeholder="City">
+          <input type="text" placeholder="Postal Code">
+        </div>
+        <label>Shipping Method</label>
+        <div class="shipping-options">
+          <div class="option selected" onclick="selectShipping(this, 4.99)">
+            <strong>Standard Shipping</strong><br>
+            <small>4-5 business days</small><br>$4.99
+          </div>
+          <div class="option" onclick="selectShipping(this, 14.99)">
+            <strong>Express Shipping</strong><br>
+            <small>1-2 business days</small><br>$14.99
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
+  <script>
+    let shippingCost = 4.99;
 
-    <!-- Bootstrap 5.0.2 JS Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Custom JS -->
-    <script src="script.js"></script>
-    <script>
-        // Retrieve cart data from localStorage
-        const cart = JSON.parse(localStorage.getItem("cart")) || [];
-      
-        // Function to populate the order summary
-        function populateOrderSummary() {
-          const orderSummaryContainer = document.querySelector(".card-body");
-          const orderItemsContainer = document.createElement("div");
-          orderItemsContainer.classList.add("order-items");
-      
-          let subtotal = 0;
-      
-          // Loop through cart items and create HTML for each
-          cart.forEach(item => {
-            const itemTotal = item.price * item.quantity;
-            subtotal += itemTotal;
-      
-            const orderItemHTML = `
-              <div class="order-item d-flex justify-content-between py-2 border-bottom">
-                <div class="d-flex">
-                  <img src="${item.img}" alt="${item.name}" class="me-3" style="width: 80px; height: 80px;">
-                  <div>
-                    <strong>${item.name}</strong>
-                    <div class="text-muted">Quantity: ${item.quantity}</div>
-                  </div>
-                </div>
-                <div class="fw-bold">$${itemTotal.toFixed(2)}</div>
-              </div>
-            `;
-      
-            orderItemsContainer.innerHTML += orderItemHTML;
-          });
-      
-          // Calculate tax and total
-          const tax = subtotal * 0.08; // Assuming 8% tax
-          const total = subtotal + tax + 4.99; // Adding flat shipping fee of $4.99
-      
-          // Add order items to the page
-          orderSummaryContainer.insertBefore(orderItemsContainer, orderSummaryContainer.querySelector(".mt-4"));
-      
-          // Update subtotal, tax, and total
-          document.querySelector(".mt-4 .d-flex:nth-child(1) span:last-child").textContent = `$${subtotal.toFixed(2)}`;
-          document.querySelector(".mt-4 .d-flex:nth-child(2) span:last-child").textContent = `$${tax.toFixed(2)}`;
-          document.querySelector(".mt-4 .d-flex:nth-child(4) span:last-child").textContent = `$${total.toFixed(2)}`;
-        }
-      
-        // Populate the order summary on page load
-        populateOrderSummary();
-      </script>
+    function updateOrder() {
+      const size = parseFloat(document.querySelector('.size-select').value);
+      const quantity = parseInt(document.querySelector('.quantity-input').value);
+      const itemTotal = size * quantity;
+
+      document.querySelector('.item-price').innerText = `$${itemTotal.toFixed(2)}`;
+      document.getElementById('subtotalAmount').innerText = `$${itemTotal.toFixed(2)}`;
+
+      const tax = itemTotal * 0.08;
+      const total = itemTotal + tax + shippingCost;
+
+      document.getElementById('taxAmount').innerText = `$${tax.toFixed(2)}`;
+      document.getElementById('totalAmount').innerText = `$${total.toFixed(2)}`;
+    }
+
+    function calculateChange() {
+      const method = document.getElementById('paymentMethod').value;
+      if (method !== 'Cash') {
+        alert(`Purchase completed using ${method}`);
+        return;
+      }
+      const total = parseFloat(document.getElementById('totalAmount').innerText.replace('$', ''));
+      const cash = parseFloat(document.getElementById('cashAmount').value);
+      const change = cash - total;
+      document.getElementById('change').value = change >= 0 ? `$${change.toFixed(2)}` : 'Insufficient';
+    }
+
+    function toggleCashInput() {
+      const method = document.getElementById('paymentMethod').value;
+      const cashSection = document.getElementById('cashSection');
+      cashSection.style.display = method === 'Cash' ? 'block' : 'none';
+    }
+
+    function selectShipping(elem, cost) {
+      document.querySelectorAll('.option').forEach(opt => opt.classList.remove('selected'));
+      elem.classList.add('selected');
+      shippingCost = cost;
+      document.getElementById('shippingCost').innerText = `$${cost.toFixed(2)}`;
+      updateOrder();
+    }
+
+    // Initialize cash section and calculate default total
+    toggleCashInput();
+    updateOrder();
+  </script>
 </body>
 </html>
