@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fragrance Fusion - Autumn EDC Collection</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/Autumn.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">FRAGRANCE FUSION</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Collections</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-5">
+        <div class="header text-center mb-4">
+            <h1>Autumn Fragrances</h1>
+            <p class="lead">Experience the warm and comforting scents of our autumn collection.</p>
+        </div>
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+    <div class="col">
+        <div class="card h-100 fragrance-card" data-name="Amber Whisper">
+            <img src="../../assets/Category Assets/EDC/Amber Whisper.jpg" class="card-img-top" alt="Amber Whisper">
+            <div class="card-body">
+                <h5 class="card-title">Amber Whisper</h5>
+                <p class="card-text">Envelop yourself in the warm and luxurious embrace of this sophisticated, timeless scent.</p>
+                <p class="card-text"><small class="text-muted">$76.99</small></p>
+                <div class="d-flex justify-content-between align-items-center">
+                    <button class="btn btn-outline-secondary btn-sm add-to-cart">Add to Cart</button>
+                    <button class="btn btn-link btn-sm view-details">View Details</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card h-100 fragrance-card" data-name="Saffron Mirage">
+            <img src="../../assets/Category Assets/EDC/Saffron Mirage.jpg" class="card-img-top" alt="Saffron Mirage">
+            <div class="card-body">
+                <h5 class="card-title">Saffron Mirage</h5>
+                <p class="card-text">Experience the alluring mystery of autumn with this opulent fragrance, a captivating saffron dream.</p>
+                <p class="card-text"><small class="text-muted">$81.50</small></p>
+                <div class="d-flex justify-content-between align-items-center">
+                    <button class="btn btn-outline-secondary btn-sm add-to-cart">Add to Cart</button>
+                    <button class="btn btn-link btn-sm view-details">View Details</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <div class="modal fade" id="fragranceDetailsModal" tabindex="-1" aria-labelledby="fragranceDetailsModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="fragranceDetailsModalLabel">Fragrance Details</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" id="fragranceDetailsBody">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary add-to-cart-modal">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../js/addcart.js"> </script>
+    <script>
+        $(document).ready(function() {
+            $('.view-details').click(function() {
+                var card = $(this).closest('.fragrance-card');
+                var name = card.data('name');
+                var img = card.find('.card-img-top').attr('src');
+                var description = card.find('.card-text:first-child').text();
+                var price = card.find('.text-muted').text();
+
+                $('#fragranceDetailsModalLabel').text(name);
+                $('#fragranceDetailsBody').html(`
+                    <img src="${img}" class="img-fluid mb-3" alt="${name}">
+                    <p>${description}</p>
+                    <p class="font-weight-bold">${price}</p>
+                    `);
+                $('.add-to-cart-modal').data('name', name); // Store name for modal's add to cart
+                $('#fragranceDetailsModal').modal('show');
+            });
+            /*
+            $('.add-to-cart, .add-to-cart-modal').click(function() {
+                var fragranceName = $(this).closest('.fragrance-card').data('name') || $(this).data('name');
+                alert(`"${fragranceName}" added to cart! (This is a simulation)`);
+                // In a real application, you would handle the cart logic here
+            }); */
+        });
+    </script>
+</body>
+</html>
