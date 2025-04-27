@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/seasons.css">
+    <!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <title>Fragrance Selector</title>
     <style>
         /* Navbar Styles */
@@ -49,19 +51,29 @@
 <body>
 
     <!-- Navbar Start -->
-    <div class="navbar">
-        <div class="logo">FRAGRANCE FUSION</div>
-        <div class="nav-links">
-            <a href="#">Collections</a>
-            <a href="#">About Us</a>
-            <a href="#">Contact</a>
-            <a href="#">FAQ</a>
+    <nav class="simple-navbar navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <div class="nav-brand">
+                <a class="navbar-brand" href="Home.html">FRAGRANCE FUSION</a>
+            </div>
+            <!-- Hamburger Menu Button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="nav-links navbar-nav mx-auto">
+                    <a class="nav-link" href="collections.html">Collections</a>
+                    <a class="nav-link" href="AboutUs.html">About Us</a>
+                    <a class="nav-link" href="ContactForm.html">Contact</a>
+                    <a class="nav-link" href="FAQ.html">FAQ</a>
+                </div>
+                <div class="auth-buttons">
+                    <a class="login-button btn btn-outline-dark" href="login.html">Login</a>
+                    <a class="signup-button btn btn-dark" href="signup.html">Sign Up</a>
+                </div>
+            </div>
         </div>
-        <div class="auth-buttons">
-            <button onclick="location.href='login.html'">Login</button>
-            <button class="signup" onclick="location.href='signup.html'">Sign Up</button>
-        </div>
-    </div>
+    </nav>
     <!-- Navbar End -->
 
     <div class="container">
@@ -97,13 +109,14 @@
                 <h3>Autumn</h3>
                 <p>Warm spicy and woody notes</p>
             </div>
-            <div class="season-option" onclick="redirectTo('winter.html')">
+            <div class="season-option" onclick="redirectTo('seasons/winter.html')">
                 <h3>Winter</h3>
                 <p>Rich oriental and vanilla blends</p>
             </div>
         </div>
     </div>
-
+<!-- Bootstrap JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         // Read the category from the URL
         const params = new URLSearchParams(window.location.search);

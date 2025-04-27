@@ -39,7 +39,9 @@
       <!-- Cart Items -->
       <div class="col-md-8">
         <div id="cart-items" class="card p-3">
-          <h5 class="mb-4"> Items</h5>
+          <h5 class="mb-4">Items</h5>
+          <div id="cart-items-list"></div>
+          <button class="btn btn-danger mt-3" onclick="removeAllItems()">Remove All</button>
         </div>
       </div>
 
@@ -51,7 +53,8 @@
           <p>Shipping: Calculated at checkout</p>
           <hr>
           <p><strong>Total: $<span id="total">0.00</span></strong></p>
-          <button class="btn btn-dark w-100">Proceed to Checkout</button>
+          <!-- Proceed to Checkout Button -->
+          <button class="btn btn-dark w-100" onclick="proceedToCheckout()">Proceed to Checkout</button>
           <ul class="mt-3 small text-muted">
             <li>🚚 Free shipping on orders over $50</li>
             <li>↩️ 30-day return policy</li>

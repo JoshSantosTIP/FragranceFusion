@@ -4,23 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fragrance Fusion Collections</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Bootstrap 5.0.2 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="../css/collections.css">
 </head>
 <body>
-    <header class="container-fluid py-3">
-        <div class="container d-flex justify-content-between align-items-center">
-            <h1 class="font-weight-bold text-uppercase mb-0">FRAGRANCE FUSION</h1>
-            <div>
-                <a href="#" class="mr-3 text-dark">Collections</a>
-                <a href="#" class="mr-3 text-dark">About</a>
-                <a href="#" class="text-dark">Contact</a>
+    <!-- Navbar -->
+    <nav class="simple-navbar navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <div class="nav-brand">
+                <a class="navbar-brand" href="Home.html">FRAGRANCE FUSION</a>
+            </div>
+            <!-- Hamburger Menu Button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="nav-links navbar-nav mx-auto">
+                    <a class="nav-link active" href="collections.html">Collections</a>
+                    <a class="nav-link" href="aboutus.html">About Us</a>
+                    <a class="nav-link" href="ContactForm.html">Contact</a>
+                    <a class="nav-link" href="FAQ.html">FAQ</a>
+                </div>
+                <div class="auth-buttons">
+                    <a class="login-button btn btn-outline-dark" href="login.html">Login</a>
+                    <a class="signup-button btn btn-dark" href="signup.html">Sign Up</a>
+                </div>
             </div>
         </div>
-    </header>
+    </nav>
 
+    <!-- Main Content -->
     <div class="container mt-4">
-        <h2 class="mb-3">Our Collections</h2>
+        <h2 class="mb-3 text-center">Our Collections</h2>
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
             <div class="col">
                 <div class="card h-100">
@@ -30,7 +47,7 @@
                         <p class="card-text small text-muted">A refreshing and invigorating aquatic fragrance.</p>
                         <div class="d-flex justify-content-between align-items-center">
                             <span class="font-weight-bold">$99.99</span>
-                            <button class="btn btn-dark btn-sm" data-toggle="modal" data-target="#aquaBloomModal">View</button>
+                            <button class="btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#aquaBloomModal">View</button>
                         </div>
                     </div>
                 </div>
@@ -43,200 +60,37 @@
                         <p class="card-text small text-muted">The crisp and clean scent of a sea breeze.</p>
                         <div class="d-flex justify-content-between align-items-center">
                             <span class="font-weight-bold">$104.99</span>
-                            <button class="btn btn-dark btn-sm" data-toggle="modal" data-target="#oceanMistModal">View</button>
+                            <button class="btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#oceanMistModal">View</button>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col">
-                <div class="card h-100">
-                    <img src="../Summer Collection Assets/Tropical Sunset.jpg" class="card-img-top" alt="Tropical Sunset">
-                    <div class="card-body">
-                        <h5 class="card-title">Tropical Sunset</h5>
-                        <p class="card-text small text-muted">Warm and exotic notes reminiscent of a tropical evening.</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <span class="font-weight-bold">$119.99</span>
-                            <button class="btn btn-dark btn-sm" data-toggle="modal" data-target="#tropicalSunsetModal">View</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100">
-                    <img src="../Winter Collection Assets/Midnight Ember.jpg" class="card-img-top" alt="Midnight Ember">
-                    <div class="card-body">
-                        <h5 class="card-title">Midnight Ember</h5>
-                        <p class="card-text small text-muted">A deep and smoky fragrance with a hint of spice.</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <span class="font-weight-bold">$129.99</span>
-                            <button class="btn btn-dark btn-sm" data-toggle="modal" data-target="#midnightEmberModal">View</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100">
-                    <img src="../Winter Collection Assets/Snowfall Serenity.jpg" class="card-img-top" alt="Snowfall Serenity">
-                    <div class="card-body">
-                        <h5 class="card-title">Snowfall Serenity</h5>
-                        <p class="card-text small text-muted">A crisp and pure scent evoking the stillness of winter.</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <span class="font-weight-bold">$114.99</span>
-                            <button class="btn btn-dark btn-sm" data-toggle="modal" data-target="#snowfallSerenityModal">View</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100">
-                    <img src="../Autumn Collection Assets/Cranberry Harvest.jpg" class="card-img-top" alt="Cranberry Harvest">
-                    <div class="card-body">
-                        <h5 class="card-title">Cranberry Harvest</h5>
-                        <p class="card-text small text-muted">A sweet and tart fragrance with warm, fruity notes.</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <span class="font-weight-bold">$109.99</span>
-                            <button class="btn btn-dark btn-sm" data-toggle="modal" data-target="#cranberryHarvestModal">View</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <!-- Add more cards as needed -->
         </div>
     </div>
 
+    <!-- Modal Example -->
     <div class="modal fade" id="aquaBloomModal" tabindex="-1" aria-labelledby="aquaBloomModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="aquaBloomModalLabel">Aqua Bloom</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <img src="Spring Collection Assets/Aqua Bloom.jpg" class="img-fluid mb-3" alt="Aqua Bloom Details">
+                    <img src="../Spring Collection Assets/Aqua Bloom.jpg" class="img-fluid mb-3" alt="Aqua Bloom Details">
                     <p><strong>Description:</strong> A refreshing and invigorating aquatic fragrance that captures the essence of a blooming spring morning by the water.</p>
                     <p><strong>Notes:</strong> Sea salt, water lily, fresh mint, white musk.</p>
                     <p><strong>Price:</strong> $99.99</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="modal fade" id="oceanMistModal" tabindex="-1" aria-labelledby="oceanMistModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="oceanMistModalLabel">Ocean Mist</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <img src="Summer Collection Assets/Ocean Mist.jpg" class="img-fluid mb-3" alt="Ocean Mist Details">
-                    <p><strong>Description:</strong> The crisp and clean scent of a sea breeze, bringing the invigorating aroma of the ocean to you.</p>
-                    <p><strong>Notes:</strong> Bergamot, marine accord, cyclamen, sandalwood.</p>
-                    <p><strong>Price:</strong> $104.99</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="tropicalSunsetModal" tabindex="-1" aria-labelledby="tropicalSunsetModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="tropicalSunsetModalLabel">Tropical Sunset</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <img src="Summer Collection Assets/Tropical Sunset.jpg" class="img-fluid mb-3" alt="Tropical Sunset Details">
-                    <p><strong>Description:</strong> Warm and exotic notes reminiscent of a tropical evening, filled with the sweet scents of blooming flowers and ripe fruits.</p>
-                    <p><strong>Notes:</strong> Mango, passionfruit, hibiscus, coconut milk.</p>
-                    <p><strong>Price:</strong> $119.99</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="midnightEmberModal" tabindex="-1" aria-labelledby="midnightEmberModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="midnightEmberModalLabel">Midnight Ember</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <img src="Winter Collection Assets/Midnight Ember.jpg" class="img-fluid mb-3" alt="Midnight Ember Details">
-                    <p><strong>Description:</strong> A deep and smoky fragrance with a hint of spice, evoking the warmth of a crackling fire on a cold winter night.</p>
-                    <p><strong>Notes:</strong> Smoked wood, amber, clove, vanilla bean.</p>
-                    <p><strong>Price:</strong> $129.99</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="snowfallSerenityModal" tabindex="-1" aria-labelledby="snowfallSerenityModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="snowfallSerenityModalLabel">Snowfall Serenity</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <img src="Winter Collection Assets/Snowfall Serenity.jpg" class="img-fluid mb-3" alt="Snowfall Serenity Details">
-                    <p><strong>Description:</strong> A crisp and pure scent evoking the stillness of winter, with clean and airy notes that feel like fresh snowfall.</p>
-                    <p><strong>Notes:</strong> Frosted pine, eucalyptus, silver birch, musk.</p>
-                    <p><strong>Price:</strong> $114.99</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="cranberryHarvestModal" tabindex="-1" aria-labelledby="cranberryHarvestModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="cranberryHarvestModalLabel">Cranberry Harvest</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <img src="Autumn Collection Assets/Cranberry Harvest.jpg" class="img-fluid mb-3" alt="Cranberry Harvest Details">
-                    <p><strong>Description:</strong> A sweet and tart fragrance with warm, fruity notes, reminiscent of a bountiful autumn harvest.</p>
-                    <p><strong>Notes:</strong> Cranberry, apple cider, cinnamon, cedarwood.</p>
-                    <p><strong>Price:</strong> $109.99</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
