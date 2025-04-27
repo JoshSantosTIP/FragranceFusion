@@ -43,136 +43,144 @@
                 <a href="#eau-de-parfum" class="cologne-link">Eau de Parfum</a>
                 <a href="#eau-de-toilette" class="cologne-link">Eau de Toilette</a>
                 <a href="#eau-de-fraiche" class="cologne-link">Eau de Fraiche</a>
+                <a href="#parfum-de-extrait" class="cologne-link">Parfum (Extrait De Parfum)</a>
             </div>
         </nav>
 
         <!-- Homepage Content -->
         <div class="homepage-content">
-            <!-- Hero Section -->
-            <section class="hero py-5">
-                <div class="container text-center">
-                    <p class="hero-subtitle lead">
-                        Discover our exclusive collection of handcrafted fragrances
-                    </p>
-                    <a href="/collections" class="cta-button btn btn-dark btn-lg">
-                        Shop Now
-                    </a>
-                    <div class="row mt-4">
-                        <div class="col-md-6 col-12 mb-3">
-                            <div class="frame-2 image-placeholder">Decorative Frame</div>
-                        </div>
-                        <div class="col-md-6 col-12">
-                            <div class="frame-3 image-placeholder">Main Product Image</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+<!-- Hero Section -->
+<section class="hero py-5 d-flex align-items-center justify-content-center" style="height: 100vh;">
+    <div class="container text-center">
+      <div class="hero-content d-inline-block">
+        <p class="hero-subtitle lead mb-4">
+          Discover our exclusive collection of handcrafted fragrances
+        </p>
+        <div class="main-image-wrapper position-relative d-inline-block">
+          <img src="../assets/mainhomepageimg.jpg" alt="Main Product" 
+               class="img-fluid mb-3" 
+               style="width: 800px; height: auto;"> <!-- 👈 added width -->
+          <a href="collections.html" class="cta-button btn btn-dark btn-lg position-absolute top-50 start-50 translate-middle">
+            Shop Now
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
 
-            <!-- Perfume Categories -->
-            <section class="container my-5">
-                <h2 class="section-title text-center mb-5">Perfume Categories</h2>
-                <div class="row perfume-categories">
-                    <div class="col-md-3 col-sm-6 col-12 mb-4" id="eau-de-cologne">
-                        <div class="perfume-category text-center">
-                            <div class="image-placeholder mb-3">
-                                <a href="../html/eaudecologneseasons.html">
-                                    <img src="../assets/EAUDE2.jpg" alt="Eau De Cologne" class="img-fluid">
-                                </a>
-                            </div>
-                            <div class="perfume-type">
-                                Eau De Cologne <br>
-                                Collection
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6 col-12 mb-4" id="eau-de-parfum">
-                        <div class="perfume-category text-center">
-                            <div class="image-placeholder mb-3">
-                                <a href="../html/eaudeparfumseasons.html">
-                                    <img src="../assets/EAUDEPARFUM.jpg" alt="Eau De Parfum" class="img-fluid">
-                                </a>
-                            </div>
-                            <div class="perfume-type">Eau De Parfum Collection</div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6 col-12 mb-4" id="eau-de-toilette">
-                        <div class="perfume-category text-center">
-                            <div class="image-placeholder mb-3">
-                                <a href="../html/eaudetoilette.html">
-                                    <img src="../assets/EAUDETOILETTE.jpg" alt="Eau De Toilette" class="img-fluid">
-                                </a>
-                            </div>
-                            <div class="perfume-type">Eau De Toilette Collection</div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6 col-12 mb-4">
-                        <div class="perfume-category text-center">
-                            <div class="image-placeholder mb-3">
-                                <a href="../html/eaudefraiche.html">
-                                    <img src="../assets/EAUDEFRAICHE.jpg" alt="Eau De Fraiche" class="img-fluid">
-                                </a>
-                            </div>
-                            <div class="perfume-type">
-                                Eau De Fraiche
-                                <br>
-                                Collection
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+      <!-- Perfume Categories -->
+<section class="container my-5" id="perfume-categories">
+    <h2 class="section-title text-center mb-5">Perfume Categories</h2>
+    <div class="perfume-categories d-flex flex-wrap justify-content-center gap-5">
 
-            <!-- Newsletter -->
-            <section class="newsletter py-5 bg-light">
-                <div class="container text-center">
-                    <h3 class="newsletter-title mb-3">Subscribe to Our Newsletter</h3>
-                    <p class="newsletter-subtitle lead mb-4">
-                        Stay updated with our latest collections and exclusive offers
-                    </p>
-                    <div class="row justify-content-center">
-                        <div class="col-md-6 col-12">
-                            <div class="input-group mb-3">
-                                <input type="email" class="form-control" placeholder="Enter your email">
-                                <button class="btn btn-dark" type="button">Subscribe Now</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+        <div id="eau-de-cologne" class="perfume-category text-center">
+            <div class="image-placeholder mb-3">
+                <a href="../html/eaudecologneseasons.html">
+                    <img src="../assets/EAUDE2.jpg" alt="Eau De Cologne" class="img-fluid" style="width: 250px; height: auto;">
+                </a>
+            </div>
+            <div class="perfume-type">
+                Eau De Cologne <br> Collection
+            </div>
+        </div>
 
-            <!-- Footer -->
-            <footer class="footer py-5 bg-dark text-white">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-3 col-12 mb-4">
-                            <h5 class="footer-title">About Us</h5>
-                            <p class="footer-description">
-                                Crafting unique fragrances that tell stories and create memories.
-                            </p>
-                        </div>
-                        <div class="col-md-3 col-12 mb-4">
-                            <h5 class="footer-title">Quick Links</h5>
-                            <a href="/collections" class="footer-link d-block">Collections</a>
-                            <a href="/contact" class="footer-link d-block">Contact Us</a>
-                            <a href="/faq" class="footer-link d-block">FAQ</a>
-                        </div>
-                        <div class="col-md-3 col-12 mb-4">
-                            <h5 class="footer-title">Customer Care</h5>
-                            <a href="#" class="footer-link d-block">Shipping Info</a>
-                            <a href="#" class="footer-link d-block">Returns</a>
-                        </div>
-                        <div class="col-md-3 col-12 mb-4">
-                            <h5 class="footer-title">Follow Us</h5>
-                            <div class="social-icons d-flex gap-3">
-                                <div class="image-placeholder">Social Icon 1</div>
-                                <div class="image-placeholder">Social Icon 2</div>
-                            </div>
-                        </div>
-                    </div>
+        <div id="eau-de-parfum" class="perfume-category text-center">
+            <div class="image-placeholder mb-3">
+                <a href="../html/eaudeparfumseasons.html">
+                    <img src="../assets/EAUDEPARFUM.jpg" alt="Eau De Parfum" class="img-fluid" style="width: 250px; height: auto;">
+                </a>
+            </div>
+            <div class="perfume-type">Eau De Parfum Collection</div>
+        </div>
+
+        <div id="eau-de-toilette" class="perfume-category text-center">
+            <div class="image-placeholder mb-3">
+                <a href="../html/eaudetoilette.html">
+                    <img src="../assets/EAUDETOILETTE.jpg" alt="Eau De Toilette" class="img-fluid" style="width: 250px; height: auto;">
+                </a>
+            </div>
+            <div class="perfume-type">Eau De Toilette Collection</div>
+        </div>
+
+        <div id="eau-de-fraiche" class="perfume-category text-center">
+            <div class="image-placeholder mb-3">
+                <a href="../html/eaudefraiche.html">
+                    <img src="../assets/EAUDEFRAICHE.jpg" alt="Eau De Fraiche" class="img-fluid" style="width: 250px; height: auto;">
+                </a>
+            </div>
+            <div class="perfume-type">
+                Eau De Fraiche <br> Collection
+            </div>
+        </div>
+
+        <div id="parfum-de-extrait" class="perfume-category text-center">
+            <div class="image-placeholder mb-3">
+                <a href="../html/parfumextraitseasons.html">
+                    <img src="../assets/PARFUMEXTRAIT.jpg" alt="Eau De Fraiche" class="img-fluid" style="width: 250px; height: auto;">
+                </a>
+            </div>
+            <div class="perfume-type">
+                Parfum (Extrait De Parfum) <br> Collection
+            </div>
+        </div>
+
+
+
+    </div>
+</section>
+
+
+          <!-- Newsletter -->
+<section class="newsletter py-5 bg-light">
+    <div class="container text-center">
+        <h3 class="newsletter-title mb-3">Subscribe to Our Newsletter</h3>
+        <p class="newsletter-subtitle lead mb-4">
+            Stay updated with our latest collections and exclusive offers
+        </p>
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-12">
+                <div class="input-group mb-3">
+                    <input type="email" class="form-control" placeholder="Enter your email">
+                    <button class="btn btn-purple" type="button">Subscribe Now</button>
                 </div>
-            </footer>
+            </div>
         </div>
     </div>
+</section>
+
+    <!-- Footer -->
+<footer class="footer py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-12 mb-4">
+                <h5 class="footer-title">About Us</h5>
+                <p class="footer-description">
+                    Crafting unique fragrances that tell stories and create memories.
+                </p>
+            </div>
+            <div class="col-md-3 col-12 mb-4">
+                <h5 class="footer-title">Quick Links</h5>
+                <a href="/collections" class="footer-link d-block">Collections</a>
+                <a href="/contact" class="footer-link d-block">Contact Us</a>
+                <a href="/faq" class="footer-link d-block">FAQ</a>
+            </div>
+            <div class="col-md-3 col-12 mb-4">
+                <h5 class="footer-title">Customer Care</h5>
+                <a href="#" class="footer-link d-block">Shipping Info</a>
+                <a href="#" class="footer-link d-block">Returns</a>
+            </div>
+            <div class="col-md-3 col-12 mb-4">
+                <h5 class="footer-title">Follow Us</h5>
+                <div class="social-icons d-flex gap-3">
+                    <img src="../assets/social-icon1.png" alt="Social Icon 1" class="social-icon">
+                    <img src="../assets/social-icon2.png" alt="Social Icon 2" class="social-icon">
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
 
     <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>

@@ -1,4 +1,5 @@
 /* Navbar Styles */
+
 .simple-navbar {
   display: flex;
   justify-content: space-between;
@@ -76,6 +77,16 @@
 
 .signup-button:hover {
   background-color: #555;
+}
+
+.btn-purple {
+  background-color: #6f42c1; /* Purple color */
+  color: white; /* Text color */
+  border: none; /* Remove border */
+}
+
+.btn-purple:hover {
+  background-color: #5a32a1; /* Darker purple on hover */
 }
 
 /* Page Structure */
@@ -243,30 +254,27 @@
 
 /* Footer */
 .footer {
-  background-color: #f5e6e8;
+  background-color: #f9f9f9; /* Light background for a fresh look */
   padding: 60px 40px;
-}
-
-.footer-section {
-  margin-bottom: 20px;
+  border-top: 5px solid #6c1874c7; /* Accent color border */
 }
 
 .footer-title {
   font-size: 22px;
   font-weight: 700;
   margin-bottom: 24px;
-  color: #1a1a1a;
+  color: #6c1874c7; /* Accent color for titles */
 }
 
 .footer-description {
-  color: rgba(26, 26, 26, 0.6);
+  color: #333;
   line-height: 1.6;
   font-size: 16px;
   max-width: 300px;
 }
 
 .footer-link {
-  color: rgba(26, 26, 26, 0.6);
+  color: #6c1874c7; /* Accent color for links */
   margin-bottom: 12px;
   cursor: pointer;
   transition: color 0.3s ease;
@@ -276,13 +284,26 @@
 }
 
 .footer-link:hover {
-  color: #1a1a1a;
+  color: #53115f; /* Darker shade on hover */
 }
 
-.social-icons {
-  display: flex;
-  gap: 15px;
+.social-icons img {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.3s ease;
 }
+
+.social-icons img:hover {
+  transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+/* Add subtle shadow for the footer */
+.footer {
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
 
 /* Responsive Design */
 @media (max-width: 768px) {

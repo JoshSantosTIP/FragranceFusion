@@ -3,29 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fragrance Fusion</title>
-    <link rel="stylesheet" href="../css/cocomademoiselle.css">
+    <title>Fragrance Fusion - Calvin Klein</title>
+    <!-- Bootstrap 5.0.2 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/calvinklein.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Female Fragrances</h1>
-        <p>Discover our collection of elegant and sophisticated fragrances crafted specifically for the modern woman.</p>
-        
-        <div class="product" id="CocoMademoiselle">
-            <img src="../assets/cocomademoiselle.jpg" alt="Coco Mademoiselle">
-            <h2>Coco Mademoiselle</h2>
-            <p>A bold yet sophisticated fragrance, blending fresh citrus notes with sensual florals and warm patchouli. </p>
-            <p class="price">$77.99</p>
-            <button 
-                class="add-to-cart" 
-                data-id="CocoMademoiselle" 
-                data-name="Coco Mademoiselle" 
-                data-price="77.99">
-                Add to Cart
+    <!-- Navbar -->
+    <nav class="simple-navbar navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <div class="nav-brand">
+                <a class="navbar-brand" href="Home.html">FRAGRANCE FUSION</a>
+            </div>
+            <!-- Hamburger Menu Button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
             </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="nav-links navbar-nav mx-auto">
+                    <a class="nav-link" href="collections.html">Collections</a>
+                    <a class="nav-link" href="aboutus.html">About Us</a>
+                    <a class="nav-link" href="ContactForm.html">Contact</a>
+                    <a class="nav-link" href="FAQ.html">FAQ</a>
+                </div>
+                <div class="auth-buttons">
+                    <a class="login-button btn btn-outline-dark" href="login.html">Login</a>
+                    <a class="signup-button btn btn-dark" href="signup.html">Sign Up</a>
+                </div>
+            </div>
         </div>
-    </div>
+    </nav>
 
-    <script src="../js/cart.js"></script>
+    <div class="container mt-5">
+        <h1 class="text-center">Female Fragrances</h1>
+        <p class="text-center">Discover our collection of elegant and sophisticated fragrances crafted specifically for the modern woman.</p>
+        
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-12">
+                <div class="product text-center" id="CocoMademoiselle">
+                    <img src="../assets/cocomademoiselle.jpg" alt="Coco Mademoiselle" class="img-fluid mb-3" style="max-width: 100%; height: auto;">
+                    <h2>Coco Mademoiselle</h2>
+                    <p>A bold yet sophisticated fragrance, blending fresh citrus notes with sensual florals and warm patchouli.</p>
+                    <p class="price fw-bold">$77.99</p>
+                    <button 
+                        class="btn btn-dark add-to-cart" 
+                        data-id="CocoMademoiselle" 
+                        data-name="Coco Mademoiselle" 
+                        data-price="77.99">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-12">
+                <div class="product text-center" id="yves">
+                    <img src="../assets/yves.jpg" alt="yves" class="img-fluid mb-3" style="max-width: 100%; height: auto;">
+                    <h2>Yves Saint Laurent – Libre Eau de Parfum</h2>
+                    <p>A sexy, fresh blend of lavender essence, orange blossom, and musk; powerful yet feminine.</p>
+                    <p class="price fw-bold">$55.99</p>
+                    <button 
+                        class="btn btn-dark add-to-cart" 
+                        data-id="yves" 
+                        data-name="yves" 
+                        data-price="55.99">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-12">
+                <div class="product text-center" id="lancome">
+                    <img src="../assets/lancome.jpg" alt="lancome" class="img-fluid mb-3" style="max-width: 100%; height: auto;">
+                    <h2>Lancôme – La Vie Est Belle Eau de Parfum</h2>
+                    <p>A sweet and floral fragrance with iris, praline, and vanilla; joyful and radiant.</p>
+                    <p class="price fw-bold">$66.99</p>
+                    <button 
+                        class="btn btn-dark add-to-cart" 
+                        data-id="lancome" 
+                        data-name="lancome" 
+                        data-price="66.99">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+
+   
+<!-- Bootstrap JS Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../js/cart.js"></script>
 </body>
 </html>

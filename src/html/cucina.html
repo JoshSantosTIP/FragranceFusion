@@ -3,29 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fragrance Fusion - Cucina</title>
-    <link rel="stylesheet" href="../css/cocomademoiselle.css">
+    <title>Fragrance Fusion - Calvin Klein</title>
+    <!-- Bootstrap 5.0.2 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/calvinklein.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Female Fragrances</h1>
-        <p>Discover our collection of elegant and sophisticated fragrances crafted specifically for the modern woman.</p>
-
-        <div class="product" id="cucina">
-            <img src="../assets/cucina.png" alt="Cucina">
-            <h2>Cucina Fruits & Passion Alo Pink Coconut Eau Fraiche Light</h2>
-            <p>A breezy, tropical escape in a bottle. With delicate hints of pink coconut, fresh florals, and juicy fruits.</p>
-            <p class="price">$88.99</p>
-            <button 
-                class="add-to-cart" 
-                data-id="Cucina" 
-                data-name="Cucina Fruits & Passion" 
-                data-price="88.99">
-                Add to Cart
+    <!-- Navbar -->
+    <nav class="simple-navbar navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <div class="nav-brand">
+                <a class="navbar-brand" href="Home.html">FRAGRANCE FUSION</a>
+            </div>
+            <!-- Hamburger Menu Button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
             </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="nav-links navbar-nav mx-auto">
+                    <a class="nav-link" href="collections.html">Collections</a>
+                    <a class="nav-link" href="aboutus.html">About Us</a>
+                    <a class="nav-link" href="ContactForm.html">Contact</a>
+                    <a class="nav-link" href="FAQ.html">FAQ</a>
+                </div>
+                <div class="auth-buttons">
+                    <a class="login-button btn btn-outline-dark" href="login.html">Login</a>
+                    <a class="signup-button btn btn-dark" href="signup.html">Sign Up</a>
+                </div>
+            </div>
         </div>
-    </div>
+    </nav>
 
-    <script src="../js/cart.js"></script>
+    <div class="container mt-5">
+        <h1 class="text-center">Female Fragrances</h1>
+        <p class="text-center">Discover our collection of elegant and sophisticated fragrances crafted specifically for the modern woman.</p>
+
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-12">
+                <div class="product text-center" id="cucina">
+                    <img src="../assets/cucina.png" alt="Cucina" class="img-fluid mb-3" style="max-width: 100%; height: auto;">
+                    <h2>Cucina Fruits & Passion Alo Pink Coconut Eau Fraiche Light</h2>
+                    <p>A breezy, tropical escape in a bottle. With delicate hints of pink coconut, fresh florals, and juicy fruits.</p>
+                    <p class="price fw-bold">$88.99</p>
+                    <button 
+                        class="btn btn-dark add-to-cart" 
+                        data-id="Cucina" 
+                        data-name="Cucina Fruits & Passion" 
+                        data-price="88.99">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-12">
+                <div class="product text-center" id="Chanelchance">
+                    <img src="../assets/chanelfraiche.jpg" alt="Chanelchance" class="img-fluid mb-3" style="max-width: 100%; height: auto;">
+                    <h2>Chanel – Chance Eau Fraîche</h2>
+                    <p>An energetic and vibrant version of Chance, with lemon, cedarwood, and soft florals; youthful and bright.</p>
+                    <p class="price fw-bold">$61.99</p>
+                    <button 
+                        class="btn btn-dark add-to-cart" 
+                        data-id="Chanelchance" 
+                        data-name="Chanelchance" 
+                        data-price="61.99">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+        
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-12">
+                <div class="product text-center" id="purekaren">
+                    <img src="../assets/KarenLowPureFraiche.jpg" alt="Cucina" class="img-fluid mb-3" style="max-width: 100%; height: auto;">
+                    <h2>Pure Karen Low Eau de Fraîche</h2>
+                    <p>A refreshing fragrance that embodies a light, airy essence.</p>
+                    <p class="price fw-bold">$71.99</p>
+                    <button 
+                        class="btn btn-dark add-to-cart" 
+                        data-id="purekaren" 
+                        data-name="purekaren" 
+                        data-price="71.99">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+<!-- Bootstrap JS Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../js/cart.js"></script>
 </body>
 </html>
