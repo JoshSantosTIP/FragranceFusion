@@ -1,11 +1,13 @@
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
     background-color: #F0F0F0;
     margin: 0;
+    padding: 0;
 }
 
 .container {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
     background-color: #E3C8E3;
@@ -14,8 +16,98 @@ body {
 
 h1, h2 {
     text-align: center;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 20px;
 }
 
+p {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Navbar Styles */
+.simple-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-brand a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-link {
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    position: relative;
+}
+
+.nav-link.active {
+    color: #000;
+    font-weight: 600;
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #333;
+}
+
+.nav-link:hover {
+    color: #666;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.login-button {
+    padding: 0.5rem 1rem;
+    color: #1a1a1a;
+    border: 1px solid #1a1a1a;
+    background-color: transparent;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.signup-button {
+    padding: 0.5rem 1rem;
+    background-color: #333;
+    color: white !important;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.signup-button:hover {
+    background-color: #555;
+}
+
+/* Style Selection */
 .style-selection, .season-selection {
     display: flex;
     justify-content: space-around;
@@ -32,9 +124,57 @@ h1, h2 {
     text-align: center;
     flex: 1 1 30%;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s ease;
+}
+
+.style-option img, .season-option img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
 }
 
 .style-option:hover, .season-option:hover {
     background-color: #D1B3D1;
+    transform: translateY(-5px);
+}
+
+.style-option h3, .season-option h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 10px 0;
+    color: #1a1a1a;
+}
+
+.style-option p, .season-option p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .simple-navbar {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .navbar-collapse {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links {
+        margin: 1rem 0;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .auth-buttons {
+        margin-top: 1rem;
+        justify-content: center;
+    }
+
+    .style-option, .season-option {
+        flex: 1 1 100%;
+    }
 }
