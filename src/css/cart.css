@@ -1,34 +1,111 @@
+/* General Styling */
 body {
-  background-color: #a9774d;
-  color: #000;
+  background-color: #f9f9f9;
+  color: #111;
+  font-family: 'Poppins', sans-serif;
 }
 
+/* Navbar */
 .navbar {
-  background-color: #fff;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
 }
 
+/* Cart Container */
 .cart-container h2 {
-  font-weight: bold;
+  font-weight: 700;
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #111;
 }
 
+/* Card */
 .card {
-  background-color: #fff;
+  background-color: #ffffff;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 20px;
 }
 
+/* Cart Item */
 .cart-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1rem;
-  border-bottom: 1px solid #eee;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #ddd;
   padding-bottom: 1rem;
 }
 
+.cart-item:last-child {
+  border-bottom: none;
+}
+
 .cart-item img {
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   object-fit: cover;
-  margin-right: 15px;
+  border-radius: 8px;
+  margin-right: 20px;
+}
+
+/* Cart Item Details */
+.cart-item-details {
+  flex: 1;
+  margin-left: 20px;
+}
+
+.cart-item-details h4 {
+  font-size: 18px;
+  margin: 0 0 5px 0;
+  color: #111;
+}
+
+.cart-item-details p {
+  font-size: 14px;
+  color: #555;
+  margin: 0;
+}
+
+/* Price and Quantity Section */
+.cart-item-info {
+  text-align: right;
+}
+
+.cart-item-info p {
+  margin: 5px 0;
+  color: #333;
+  font-size: 16px;
+}
+
+/* Buttons */
+.button {
+  background-color: #000;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #222;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cart-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .cart-item img {
+    margin-bottom: 10px;
+  }
+  .cart-item-info {
+    text-align: left;
+    margin-top: 10px;
+  }
 }

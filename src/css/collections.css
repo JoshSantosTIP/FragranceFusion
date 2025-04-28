@@ -1,74 +1,271 @@
-body {
-    font-family: sans-serif;
-    background-color: #d8c4ec; /* Light purple background */
-}
 
-/* Style for the header outside the main container */
-header.container-fluid {
-    background-color: #f8f9fa; /* Optional: You can set a different background for the header if needed */
-    padding-top: 15px;
-    padding-bottom: 15px;
-}
-
-header.container-fluid .container h1 {
-    margin-bottom: 0; /* Remove default margin for better vertical alignment */
-    color: #343a40; /* Dark gray heading */
-}
-
-header.container-fluid .container a {
-    text-decoration: none;
-    color: #343a40; /* Dark gray links */
-}
-
-.container {
-    background-color: #ffffff; /* White container for the content */
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-    margin-top: 20px; /* Add some top margin to separate from the header */
-}
-
-h2 {
-    color: #212529; /* Dark heading for "Our Collections" */
-}
+/* Collection Cards - Clean and Interactive */
 
 .card {
-    border: 1px solid #d8c4ec; /* Light purple card border */
-    border-radius: 8px;
-    overflow: hidden;
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .card-img-top {
-    height: 200px; /* Adjust as needed */
-    object-fit: cover;
+  height: 300px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
 }
 
-.card-body {
-    padding: 15px;
+.card:hover .card-img-top {
+  transform: scale(1.05);
 }
 
 .card-title {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-    color: #212529; /* Dark text */
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #111;
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+
+.card:hover .card-title {
+  color: #555;
 }
 
 .card-text {
-    color: #6c757d; /* Gray text */
-    margin-bottom: 1rem;
+  color: #666;
+  font-size: 0.95rem;
 }
 
-.btn-dark {
-    background-color: #ffffff; /* Dark button */
-    border-color: #d8c4ec;
-    color: #d8c4ec;
-    text-decoration: none;
-    font-size: 0.8rem;
+.btn-dark.btn-sm {
+  border-radius: 20px;
+  padding: 6px 18px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.btn-dark:hover {
-    background-color: #d8c4ec; 
-    border-color: #d8c4ec;
-    color: #ffffff; /* Change the text color to #d8c4ec on hover */
-    text-decoration: underline;
+.btn-dark.btn-sm:hover {
+  background-color: #333;
+  transform: scale(1.05);
 }
+
+/* Header styles */
+.header {
+    background-color: white;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 17px 39px;
+    align-items: center;
+    flex-wrap: wrap;
+    position: fixed; /* Fixes the navbar to the top */
+    top: 0; /* Aligns the navbar to the top of the page */
+    left: 0; /* Ensures the navbar spans the full width */
+    right: 0;
+    z-index: 1000; /* Ensures the navbar stays above other content */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: adds a shadow for better visibility */
+  }
+  
+  /* Adds some spacing to the content below the fixed navbar */
+  body {
+    padding-top: 80px; /* Adjust this value depending on the height of the navbar */
+  }
+  
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 31px;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #111111;
+  }
+  
+  .main-nav {
+    display: flex;
+    align-items: center;
+    gap: 31px;
+    font-size: 1rem;
+  }
+  
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 23px;
+    text-align: center;
+  }
+  
+  .nav-link {
+    color: #111111;
+    text-decoration: none; /* Remove underline on all links */
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for zoom and color */
+  }
+  
+  .nav-link:hover {
+    transform: scale(1.1); /* Zoom effect */
+    color: #333333; /* Optional: change color on hover */
+  }
+  
+  .signup-btn {
+    border-radius: 4px;
+    background-color: #111111;
+    color: white;
+    padding: 8px 16px;
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+  }
+  
+  .signup-btn:hover {
+    background-color: #333333;
+  }
+  
+  .cart-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+  }
+
+
+  /* Footer styles */
+.footer {
+    background-color: #ffffff;
+    width: 80%;
+    padding: 70px 36px 40px 36px;
+    margin: 0 auto; /* This centers the footer horizontally */
+  }
+  
+  .footer-content {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .footer-column {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .footer-section {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .footer-heading {
+    color: #111111;
+    font-size: 1.25rem;
+    font-weight: bold;
+    line-height: 1.4;
+  }
+  
+  .footer-text {
+    color: #444444;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-top: 27px;
+  }
+  
+  .footer-nav {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .footer-link {
+    color: #444444;
+    margin-top: 25px;
+    transition: color 0.3s;
+  }
+  
+  .footer-link:hover {
+    color: black;
+  }
+  
+  
+  .social-links {
+    display: flex;
+    gap: 24px;
+    margin-top: 25px;
+  }
+  
+  .social-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+  }
+  
+  .copyright {
+    text-align: center;
+    color: #444444;
+    font-size: 0.875rem;
+    margin-top: 40px;
+  }
+  
+  /* Media queries */
+  @media (max-width: 768px) {
+    .header {
+      padding: 17px 20px;
+    }
+    
+    .hero-title {
+      font-size: 2.5rem;
+      margin-top: 40px;
+    }
+    
+    .hero-image {
+      margin-top: 40px;
+    }
+    
+    .stats {
+      margin-top: 40px;
+    }
+    
+    .stats-container {
+      flex-direction: column;
+    }
+    
+    .stat-card {
+      margin-top: 32px;
+      padding: 32px 20px;
+    }
+    
+    .team-title {
+      margin-top: 40px;
+    }
+    
+    .team-row {
+      flex-direction: column;
+      margin-top: 40px;
+    }
+    
+    .team-row.second-row {
+      margin-top: 40px;
+    }
+    
+    .team-col-left {
+      width: 100%;
+    }
+    
+    .team-col-right {
+      width: 100%;
+      margin-top: 36px;
+    }
+    
+    .newsletter {
+      margin-top: 40px;
+      padding: 81px 20px;
+    }
+    
+    .footer-content {
+      flex-direction: column;
+    }
+    
+    .footer-column {
+      width: 100%;
+      margin-top: 40px;
+    }
+  }
+  

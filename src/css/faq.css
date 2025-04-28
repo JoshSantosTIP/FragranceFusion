@@ -1,7 +1,7 @@
 /* FAQ Page Container */
 .faq-page {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f9f1f3; /* Light pink background */
+    font-family: 'Poppins', sans-serif;
+    background-color: #fafafa;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -9,51 +9,50 @@
 
 /* Navbar Styling */
 .navbar {
-    background-color: #fdfaf5;
-    border-bottom: 1px solid #e5e5e5;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
 }
 
 .navbar-brand {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 700;
-    font-size: 24px;
-    color: #1a1a1a;
+    font-size: 26px;
+    color: #111;
     text-decoration: none;
 }
 
 .nav-link {
     font-size: 16px;
-    color: #1a1a1a;
-    text-decoration: none;
+    color: #333;
     margin: 0 15px;
     transition: color 0.3s ease;
 }
 
 .nav-link:hover {
-    color: #9f7aea;
+    color: #000;
 }
 
 .nav-link.active {
     font-weight: bold;
-    color: #9f7aea;
+    color: #000;
 }
 
 /* FAQ Content */
 .container {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
-    padding: 40px 20px;
+    padding: 50px 20px;
 }
 
 .text-center h1 {
-    font-size: 32px;
+    font-size: 36px;
     font-weight: 700;
-    color: #1a1a1a;
-    margin-bottom: 20px;
+    color: #111;
+    margin-bottom: 15px;
 }
 
 .text-center p {
-    font-size: 16px;
+    font-size: 18px;
     color: #555;
     margin-bottom: 40px;
 }
@@ -61,97 +60,99 @@
 /* Accordion Styling */
 .accordion-item {
     background-color: #ffffff;
-    border: 1px solid #e5e5e5;
-    border-radius: 8px;
-    margin-bottom: 16px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
     overflow: hidden;
     transition: all 0.3s ease;
 }
 
 .accordion-item:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
     transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.08);
 }
 
 .accordion-header {
-    font-size: 16px;
-    font-weight: 500;
-    color: #1a1a1a;
+    font-size: 18px;
+    font-weight: 600;
+    color: #111;
 }
 
 .accordion-button {
-    background-color: #fdfaf5;
-    color: #1a1a1a;
-    font-size: 16px;
-    font-weight: 500;
-    padding: 16px;
+    background-color: #ffffff;
+    color: #111;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 18px;
     border: none;
     outline: none;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 0;
 }
 
 .accordion-button:hover {
-    background-color: #f5f5f5;
+    background-color: #f2f2f2;
 }
 
 .accordion-button:not(.collapsed) {
-    color: #9f7aea;
-    background-color: #f9f1f3;
+    color: #000;
+    background-color: #f9f9f9;
+    box-shadow: inset 0 -2px 0 #000;
 }
 
 .accordion-body {
     font-size: 16px;
-    line-height: 1.6;
-    color: #4a4a4a;
-    padding: 16px;
+    line-height: 1.7;
+    color: #444;
+    padding: 20px;
 }
 
 /* Footer Styling */
 footer {
-    background-color: #fdfaf5;
+    background-color: #ffffff;
     padding: 20px;
     text-align: center;
     font-size: 14px;
-    color: #555;
-    border-top: 1px solid #e5e5e5;
+    color: #777;
+    border-top: 1px solid #e0e0e0;
 }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
     .text-center h1 {
-        font-size: 28px;
+        font-size: 30px;
     }
-
+    
     .text-center p {
-        font-size: 14px;
+        font-size: 16px;
     }
-
+    
     .accordion-button {
-        font-size: 14px;
-        padding: 12px;
+        font-size: 16px;
+        padding: 16px;
     }
-
+    
     .accordion-body {
-        font-size: 14px;
+        font-size: 15px;
     }
 }
 
 @media (max-width: 480px) {
     .text-center h1 {
-        font-size: 24px;
+        font-size: 26px;
     }
-
+    
     .text-center p {
-        font-size: 12px;
+        font-size: 14px;
     }
-
+    
     .accordion-button {
-        font-size: 12px;
-        padding: 10px;
+        font-size: 14px;
+        padding: 14px;
     }
-
+    
     .accordion-body {
-        font-size: 12px;
+        font-size: 14px;
     }
 }
